@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Section from '../section';
 import styled from 'styled-components';
+import Section from '../section';
+import CalendarButton from '../CalendarButton';
 
 const StyledSection = styled(Section)`
 	grid-area: details;
@@ -9,7 +10,11 @@ const StyledSection = styled(Section)`
 const Details = () => {
 	return (
 		<StyledSection id="details">
-			Wedding details
+			<div className="details">
+				<div className="when"></div>
+				<div className="where"></div>
+				<CalendarButton />
+			</div>
 		</StyledSection>
 	)
 }

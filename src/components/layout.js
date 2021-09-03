@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Header from '../components/header';
-import styled from 'styled-components';
+import styled from "styled-components"
+import { GlobalStyle } from './css-global-styles';
+import Header from './header';
 
 const StyledMain = styled.main`
 	display: grid;
@@ -14,6 +15,7 @@ const StyledMain = styled.main`
 const Layout = ({ pageTitle, children }) => {
 	return (
 		<React.Fragment>
+			<GlobalStyle />
 			<title>{pageTitle}</title>
 			<StyledMain>
 				<Header />

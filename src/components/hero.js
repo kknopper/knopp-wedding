@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Section from '../components/section';
 import styled from 'styled-components';
+import Section from './section';
 
 const StyledSection = styled(Section)`
 	text-align: center;
@@ -8,6 +8,7 @@ const StyledSection = styled(Section)`
 	height: calc(100vh - 100px);
 	grid-area: hero;
 	background: lavender;
+	font-family: 'Calafia';
 `
 
 const Hero = ({ children }) => {

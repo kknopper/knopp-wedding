@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from '../components/layout';
 import Hero from '../components/hero';
 import Details from '../components/sections/details';
-import "normalize.css";
+// import "normalize.css";
 
 const IndexPage = () => {
 	return (

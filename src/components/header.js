@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Nav from '../components/nav';
 import styled from 'styled-components'
+import { font } from './css-mixins'
+import Nav from './nav';
 
 const StyledHeader = styled.header`
 	height: 100px;
@@ -18,9 +19,10 @@ const StyledHeader = styled.header`
 `
 
 const H1 = styled.h1`
+	${font({family: 'Blooming Elegant Sans', color: '#FFF', size: '4em'})};
+	line-height: 30px;
 	margin: 0;
 	flex-basis: 100%;
-	color: #FFF;
 `
 
 const Header = () => {

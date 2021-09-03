@@ -1,21 +1,32 @@
 import * as React from 'react';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import styled from "styled-components"
+import { breakpoint } from './css-mixins'
+
+
+const StyledNav = styled.nav`
+	${breakpoint.small`
+		display: none;
+	`}
+`
 
 const StyledUl = styled.ul`
-	padding-left: 0;
-	margin: 0;
+	/* margin: 0; */
 `
 
 const StyledLi = styled.li`
-	list-style-type: none;
 	display: inline-block;
 	padding: 10px;
+	font-size: 1.5em;
+
+	a {
+		color: #fff;
+	}
 `
 
 const Nav = () => {
 	return (
-		<nav>
+		<StyledNav>
 			<StyledUl>
 				<StyledLi>
 					<AnchorLink
@@ -34,7 +45,7 @@ const Nav = () => {
 					/>
 				</StyledLi>
 			</StyledUl>
-		</nav>
+		</StyledNav>
 	)
 }
 
