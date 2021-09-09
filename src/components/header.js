@@ -10,16 +10,19 @@ const StyledHeader = styled.header`
 	text-align: center;
 	flex-wrap: wrap;
 	box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px;
+	box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
 	padding-top: 25px;
 	box-sizing: border-box;
 	grid-area: header;
-	position: sticky;
-	top: 0;
-	background: #546755;
+	position: absolute;
+	top: -100px;
+	/* border-bottom: 1px solid rgb(34, 34, 34); */
+	background: #FFF;
+	z-index: 2;
 `
 
 const H1 = styled.h1`
-	${font({family: 'Blooming Elegant Sans', color: '#FFF', size: '4em'})};
+	${font({family: 'Playfair Display', color: 'rgb(34, 34, 34)', size: '2em'})};
 	line-height: 30px;
 	margin: 0;
 	flex-basis: 100%;

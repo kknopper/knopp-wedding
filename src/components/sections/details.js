@@ -2,20 +2,22 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Section from '../section';
 import CalendarButton from '../CalendarButton';
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
-const StyledSection = styled(Section)`
-	grid-area: details;
+
+const Content = styled.div`
+	grid-area: content;
 `
 
 const Details = () => {
 	return (
-		<StyledSection id="details">
-			<div className="details">
+		<Section id="details" headlineIcon={faInfoCircle}>
+			<Content>
 				<div className="when"></div>
 				<div className="where"></div>
 				<CalendarButton />
-			</div>
-		</StyledSection>
+			</Content>
+		</Section>
 	)
 }
 

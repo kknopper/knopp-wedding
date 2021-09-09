@@ -5,6 +5,8 @@ import {normalize, fontFace} from "polished"
 import BloomingElegantSans from "../fonts/blooming-elegant-sans.otf";
 import BloomingElegantSansBold from "../fonts/blooming-elegant-sans-bold.otf";
 import Calafia from "../fonts/calafia-regular.otf";
+import "@fontsource/open-sans";
+import "@fontsource/playfair-display";
 
 
 export const GlobalStyle = createGlobalStyle`	
@@ -35,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 
 	body {
 		padding: 0;
-		font-family: "Blooming Elegant Sans";
+		font-family: "Open Sans";
 	}
 
 	ul {

@@ -20,7 +20,8 @@ const StyledLi = styled.li`
 	font-size: 1.5em;
 
 	a {
-		color: #fff;
+		color: #000;
+		font-family: 'Blooming Elegant Sans'
 	}
 `
 
@@ -40,6 +41,46 @@ const Nav = () => {
 					<AnchorLink
 						to="/#schedule"
 						title="Schedule"
+						className="stripped"
+						stripHash
+					/>
+				</StyledLi>
+				<StyledLi>
+					<AnchorLink
+						to="/#travel"
+						title="Travel"
+						className="stripped"
+						stripHash
+					/>
+				</StyledLi>
+				<StyledLi>
+					<AnchorLink
+						to="/#accommodations"
+						title="Accommodations"
+						className="stripped"
+						stripHash
+					/>
+				</StyledLi>
+				<StyledLi>
+					<AnchorLink
+						to="/#faq"
+						title="FAQ"
+						className="stripped"
+						stripHash
+					/>
+				</StyledLi>
+				<StyledLi>
+					<AnchorLink
+						to="/#registry"
+						title="Registry"
+						className="stripped"
+						stripHash
+					/>
+				</StyledLi>
+				<StyledLi>
+					<AnchorLink
+						to="/#rsvp"
+						title="rsvp"
 						className="stripped"
 						stripHash
 					/>
