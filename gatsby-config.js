@@ -4,6 +4,7 @@ module.exports = {
     title: "knopp-wedding",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",

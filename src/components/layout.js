@@ -22,11 +22,10 @@ const StyledMain = styled.main`
 	`}
 `
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
 	return (
 		<React.Fragment>
 			<GlobalStyle />
-			<title>{pageTitle}</title>
 			<StyledMain>
 				<Header />
 				{children}
