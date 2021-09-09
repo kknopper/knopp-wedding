@@ -1,6 +1,12 @@
 import * as React from 'react';
-import styled from "styled-components"
-import { ConversationalForm } from 'conversational-form';
+import styled from "styled-components";
+
+//Conversational Form Workaround
+// import loadable from '@loadable/component';
+// const { ConversationalForm } = loadable.lib(() => import('conversational-form'))
+import { ConversationalForm } from "conversational-form";
+
+
 
 const StyledForm = styled.form`
 	margin: 0 auto;
@@ -9,7 +15,7 @@ const StyledForm = styled.form`
 	border-radius: 8px;
 	min-height: 50vh;
 
-	.conversational-form, .converational-form-inner {
+	.conversational-form, .conversational-form-inner {
 		border-radius: 8px;
 		z-index: 0;
 	}
@@ -85,13 +91,12 @@ export default class Form extends React.Component {
 
 	submitCallback() {
 		var formDataSerialized = this.cf.getFormData(true);
-		console.log("Formdata, obj:", formDataSerialized);
-		this.cf.addRobotChatResponse("You are done. Check the dev console for form data output.")
+		this.cf.addRobotChatResponse("You are done. Check the dev console for form data output.", formDataSerialized, )
 	}
 
 	render() {
-	return (
-		<StyledForm ref={ref => this.elem = ref} />
-	);
+		return (
+			<StyledForm ref={ref => this.elem = ref} />
+		);
 	}
 }
