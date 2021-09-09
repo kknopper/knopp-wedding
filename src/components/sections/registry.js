@@ -26,9 +26,6 @@ const Content = styled.div`
 
 const Registry = () => {
 	const iframeRef = React.createRef(null);
-	// console.log(iframeRef.current);
-	// let computed = window.getComputedStyle(iframeRef.current).getPropertyValue("--max-items");
-	// console.log(computed);
 	const maxItems = 12;
 	return (
 		<Section id="registry" headlineIcon={faGift}>
