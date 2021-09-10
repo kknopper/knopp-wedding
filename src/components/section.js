@@ -6,8 +6,13 @@ import { breakpoint } from './css-mixins'
 const SectionStyled = styled.section`
 	height: auto;
 	width: 100%;
-	background: #fff;
+	background: var(--theme-bg);
+	color: var(--theme-text);
 	position: relative;
+	z-index: 1;
+
+	/* Safari / Webkit z-index fix */
+	transform: translateZ(0);
 `;
 
 const SectionContent = styled.div`
@@ -29,7 +34,7 @@ const Section = ({ id, className, children, headlineText, headlineIcon }) => {
 	return (
 		<SectionStyled id={id} className={`section ${className}`}>
 			<SectionContent>
-				<SectionHeadline faIcon={headlineIcon}>{ id || headlineText }</SectionHeadline>
+				<SectionHeadline faIcon={headlineIcon}>{ headlineText || id }</SectionHeadline>
 				{children}
 			</SectionContent>
 		</SectionStyled>

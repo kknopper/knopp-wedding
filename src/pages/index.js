@@ -14,6 +14,14 @@ const IndexPage = () => {
 			<Helmet>
 				<title>Kevin & Nadia | A Knopp Wedding</title>
 				<link rel="icon" href="https://fav.farm/🚂" />
+				<meta name="theme-color" 
+					content="#183905" 
+					media="(prefers-color-scheme: light)"
+				/>
+				<meta name="theme-color" 
+					content="#183905" 
+					media="(prefers-color-scheme: dark)"
+				/>
 			</Helmet>
 			<Layout>
 				<Hero/>

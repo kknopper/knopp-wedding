@@ -35,6 +35,11 @@ export const GlobalStyle = createGlobalStyle`
 		font-weight: bold;
 	}
 
+	:root {
+		--theme-text: rgb(34, 34, 34);
+		--theme-bg: #fff;
+	}
+
 	body {
 		padding: 0;
 		font-family: "Open Sans";

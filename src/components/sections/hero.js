@@ -11,12 +11,13 @@ const StyledSection = styled.section`
 	height: calc(100vh);
 	width: 100%;
 	grid-area: hero;
-	background: lavender;
+	background: var(--theme-bg);
 	font-family: 'Playfair Display';
 	padding: var(--padding);
 	box-sizing: border-box;
 	position: sticky;
 	top: 0;
+	z-index: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -68,7 +69,7 @@ const StyledSubheadline = styled.h2`
 const Hero = () => {
 	return (
 		<StyledSection>
-			<StaticImage className="hero-img" src="../../images/hero.jpg" alt="Redwood Grove" loading="eager"  />
+			<StaticImage className="hero-img" src="../../images/hero.jpg" alt="Redwood Grove" loading="eager" placeholder="blurred" />
 			<HeroContent>
 				<StyledHeadline>Kevin & Nadia</StyledHeadline>
 				<StyledSubheadline>We're getting Married!</StyledSubheadline>

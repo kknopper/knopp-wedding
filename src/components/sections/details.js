@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Section from '../section';
 import CalendarButton from '../CalendarButton';
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+/* import { faRingsWedding } from "@fortawesome/free-solid-svg-icons"; */
 
 
 const Content = styled.div`
@@ -11,7 +11,7 @@ const Content = styled.div`
 
 const Details = () => {
 	return (
-		<Section id="details" headlineIcon={faInfoCircle}>
+		<Section id="details" headlineText="The Wedding">
 			<Content>
 				<div className="when"></div>
 				<div className="where"></div>
