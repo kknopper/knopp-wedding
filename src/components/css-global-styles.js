@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import {normalize, fontFace} from "polished"
+import { normalize } from "polished"
 
 // Fonts
 import BloomingElegantSans from "../fonts/blooming-elegant-sans.otf";
@@ -11,13 +11,6 @@ import "@fontsource/playfair-display";
 
 export const GlobalStyle = createGlobalStyle`	
 	${normalize()}
-	
-	/* ${fontFace({
-		'fontFamily': 'Calafia',
-		'fontFilePath': Calafia,
-		'fileFormats': ['otf'],
-		'formatHint': true
-	})} */
 
 	@font-face {
 		font-family: "Calafia";

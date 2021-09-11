@@ -1,7 +1,8 @@
 import * as React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+// import { useInView } from "react-intersection-observer"
 import SectionHeadline from './SectionHeadline';
-import { breakpoint } from './css-mixins'
+import { breakpoint } from './css-mixins';
 
 const SectionStyled = styled.section`
 	height: auto;
@@ -30,11 +31,13 @@ const SectionContent = styled.div`
 	`}
 `
 
-const Section = ({ id, className, children, headlineText, headlineIcon }) => {
+const Section = ({ id, children, headlineText, headlineIcon }) => {
 	return (
-		<SectionStyled id={id} className={`section ${className}`}>
+		<SectionStyled id={id} className={`section section-${id}`}>
 			<SectionContent>
-				<SectionHeadline faIcon={headlineIcon}>{ headlineText || id }</SectionHeadline>
+				<SectionHeadline faIcon={headlineIcon || null}>
+					{ headlineText || id }
+				</SectionHeadline>
 				{children}
 			</SectionContent>
 		</SectionStyled>

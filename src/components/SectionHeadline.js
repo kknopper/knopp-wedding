@@ -2,8 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { font, breakpoint } from './css-mixins';
+import { useSpring, animated } from 'react-spring';
+import { useInView } from "react-intersection-observer";
 
-const StyledHeadline = styled.h2`
+const StyledHeadline = styled(animated.h2)`
 	${font({family: 'Playfair Display', color: 'var(--theme-text)', size: '3em'})};
 	text-align: center;
 	grid-area: headline;
@@ -23,8 +25,14 @@ const StyledText = styled.span`
 
 const SectionHeadline = ({faIcon, children}) => {
 	const capitalize = ([firstLetter, ...restOfWord]) => firstLetter.toUpperCase() + restOfWord
+	const [ref, inView] = useInView({
+		triggerOnce: true,
+		rootMargin: '-200px 0px',
+	});
+	const animation = useSpring({ to: { opacity: inView ? 1 : 0, y: inView ? 0 : -30}, from: { opacity: 0, y: -30 }, config: { duration: 400 }, });
+
 	return (
-		<StyledHeadline>
+		<StyledHeadline ref={ref} style={animation}>
 			{faIcon != null ? <StyledIcon icon={faIcon} /> : null}
 			<StyledText>{capitalize(children)}</StyledText>
 		</StyledHeadline>
