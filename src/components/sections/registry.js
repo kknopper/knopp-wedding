@@ -25,18 +25,22 @@ const Content = styled.div`
 `
 
 const Registry = () => {
-	const iframeRef = React.createRef(null);
-	const maxItems = 12;
+	// const iframeRef = React.createRef(null);
+		// console.log(iframeRef.current);
+	// let computed = window.getComputedStyle(iframeRef.current).getPropertyValue("--max-items");
+	// console.log(computed);
+	// const maxItems = 12;
 	return (
 		<Section id="registry" headlineIcon={faGift}>
 			<Content id="zola-iframe-container">
 				<iframe
-					ref={iframeRef}
+					// ref={iframeRef}
 					id="zola-iframe"
 					title="registry"
-					src={`https://widget.zola.com/v1/widget/registry/aknoppwedding/html?maxItems=${maxItems}&amp;partnerId=squarespace`}
+					src={`https://widget.zola.com/v1/widget/registry/aknoppwedding/html?maxItems=12&amp;partnerId=squarespace`}
 					className="zola-registry-iframe"
-					scrolling="yes"
+					scrolling="no"
+					style={{ height: "1200px", width: "100%", position: "relative" }}
 					width="100%"
 					frameBorder="0"
 				/>

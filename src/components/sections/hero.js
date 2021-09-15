@@ -1,7 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { StaticImage } from "gatsby-plugin-image"
-import { breakpoint } from '../css-mixins'
+import { StaticImage } from "gatsby-plugin-image";
+import { useSpring, animated, config } from 'react-spring';
+import { breakpoint } from '../css-mixins';
+import Scroll from '../scroll'
 
 
 const StyledSection = styled.section`
@@ -35,11 +37,11 @@ const HeroContent = styled.div`
 	padding: 25px;
 `;
 
-const StyledHeadline = styled.h1`
+const StyledHeadline = styled(animated.h1)`
 	color: #fff;
 	font-size: 7em;
+	font-weight: 300;
 	margin: 0;
-	transition: font-size 0.5s ease-in-out;
 
 	${breakpoint.medium`
 		font-size: 5em;
@@ -51,11 +53,10 @@ const StyledHeadline = styled.h1`
 	
 `;
 
-const StyledSubheadline = styled.h2`
+const StyledSubheadline = styled(animated.h2)`
 	color: rgba(355,355,355, 0.95);
 	font-size: 3em;
 	margin: 25px 0 0 0;
-	transition: font-size 0.5s ease-in-out;
 
 	${breakpoint.medium`
 		font-size: 2em;
@@ -66,14 +67,25 @@ const StyledSubheadline = styled.h2`
 	`}
 `;
 
+
+
 const Hero = () => {
+	const Animation = (delay = 0) => useSpring({ 
+		from: { y: 30, opacity: 0 },
+		y: 0,
+		opacity: 1,
+		config: config.molasses,
+		delay: delay
+	});
+
 	return (
 		<StyledSection>
 			<StaticImage className="hero-img" src="../../images/hero.jpg" alt="Redwood Grove" loading="eager" placeholder="blurred" />
 			<HeroContent>
-				<StyledHeadline>Kevin & Nadia</StyledHeadline>
-				<StyledSubheadline>We're getting Married!</StyledSubheadline>
+				<StyledHeadline style={Animation(500)}>Kevin & Nadia</StyledHeadline>
+				<StyledSubheadline style={Animation(800)}>We're getting Married!</StyledSubheadline>
 			</HeroContent>
+			<Scroll />
 		</StyledSection>
 	)
 }

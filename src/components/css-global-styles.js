@@ -54,4 +54,9 @@ export const GlobalStyle = createGlobalStyle`
 			color: inherit;
 		}
 	}
+
+	.body-content {
+		background: var(--theme-bg);
+		transform: translateZ(0);
+	}
 `

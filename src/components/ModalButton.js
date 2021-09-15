@@ -3,19 +3,39 @@ import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import useToggle from "./useToggle"
 
+const StyledIcon = styled(FontAwesomeIcon)`
+	transition: all 0.3s ease-in-out;
+`;
+
 const StyledModalButton = styled.button`
 	border-radius: 5px;
-	background: lightblue;
 	padding: 15px;
 	font-size: 25px;
+	font-family: 'Blooming Elegant Sans';
 	border: none;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	position: relative;
+	margin: 0 auto;
+	transition: all 0.3s ease-in-out;
+	background: #fff;
+	border: 2px solid var(--theme-text);
+	color: var(--theme-text);
+	box-sizing: border-box;
 
 	&.modal-active {
 		pointer-events: none;
+	}
+
+	&:hover {
+		/* background: lightgreen; */
+		/* border: 2px solid lightgreen; */
+		/* color: white; */
+		${StyledIcon} {
+			transform: scale(1.1);
+			/* color: white; */
+		}
 	}
 `
 
@@ -31,13 +51,36 @@ const Modal = styled.div`
 	border-radius: 5px;
 	position: absolute;
 	z-index: 1;
-	background: lightblue;
-	width: 100%;
-	left: 0;
+	color: var(--theme-text);
+	background: var(--theme-bg);
+	border: 2px solid var(--theme-text);
+	width: calc(100% + 4px);
+	box-sizing: border-box;
+	left: -2px;
+	overflow: hidden;
 
 	.modal-active & {
 		opacity: 1;
 		pointer-events: auto;
+	}
+
+	a {
+		background: var(--theme-bg);
+		color: var(--theme-color);
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			color: var(--theme-bg);
+			background: var(--theme-text);
+		}
+
+		&:visited {
+			color: inherit;
+		}
+
+		&:active {
+			color: inherit;
+		}
 	}
 `
 
@@ -66,7 +109,7 @@ const ModalButton = ({buttonText, faIcon, children}) => {
 
 	return (
 		<StyledModalButton onClick={handleClick} className={isVisible ? 'modal-active': ''}>
-			<FontAwesomeIcon icon={faIcon} />
+			<StyledIcon icon={faIcon} />
 			<StyledText>{buttonText}</StyledText>
 			<Modal ref={modalRef}>
 				{children}

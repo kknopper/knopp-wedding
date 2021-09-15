@@ -10,15 +10,13 @@ const SectionStyled = styled.section`
 	background: var(--theme-bg);
 	color: var(--theme-text);
 	position: relative;
-	z-index: 1;
-
-	/* Safari / Webkit z-index fix */
-	transform: translateZ(0);
+	/* z-index: 1; */
+	/* transform: translateZ(0); */
 `;
 
 const SectionContent = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 65ch 1fr;
+	grid-template-columns: 1fr 1000px 1fr;
 	grid-template-areas: 
 	"headline headline headline"
 	". content .";

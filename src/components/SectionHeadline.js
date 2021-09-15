@@ -6,9 +6,10 @@ import { useSpring, animated } from 'react-spring';
 import { useInView } from "react-intersection-observer";
 
 const StyledHeadline = styled(animated.h2)`
-	${font({family: 'Playfair Display', color: 'var(--theme-text)', size: '3em'})};
+	${font({family: 'Playfair Display', color: 'var(--theme-text)', size: '70px'})};
 	text-align: center;
 	grid-area: headline;
+	padding: 30px 0;
 
 	${breakpoint.small`
 		font-size: 2em;

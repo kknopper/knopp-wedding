@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components'
 import Nav from './nav';
 import { font } from './css-mixins'
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated, config } from 'react-spring';
 import { useInView } from "react-intersection-observer";
 
 const StyledHeader = styled(animated.header)`
@@ -34,13 +34,18 @@ const H1 = styled.h1`
 const Header = () => {
 
 	const [ref, inView] = useInView({
-		triggerOnce: true,
-		rootMargin: '-650px 0px',
+		triggerOnce: false,
+		rootMargin: '-50%',
 	});
-	const animation = useSpring({ to: { y: inView ? '0' : '-100%'}, from: { y: '-100%' }, config: { duration: 400 }, });
+	const animation = useSpring(
+		{ 
+			transform: `translateY(${inView ? "0%" : "-200%"})`,
+			config: config.slow,
+		}
+	);
 
 	React.useEffect(() => {
-		const detailsEl = typeof document !== "undefined" && document.querySelector("#details")
+		const detailsEl = typeof document !== "undefined" && document.querySelector(".body-content")
 		ref(detailsEl);
 	}, [ref])
 

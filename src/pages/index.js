@@ -25,11 +25,13 @@ const IndexPage = () => {
 			</Helmet>
 			<Layout>
 				<Hero/>
-				<Details/>
-				<Schedule/>
-				<Accommodations/>
-				<Registry/>
-				<Rsvp/>
+				<div className="body-content">
+					<Details/>
+					<Schedule/>
+					<Accommodations/>
+					<Registry/>
+					<Rsvp/>
+				</div>
 			</Layout>
 		</React.Fragment>
 	)

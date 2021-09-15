@@ -14,7 +14,7 @@ const ModalLinks = styled.a`
 	align-items: center;
 	padding: 10px;
 
-	&:active {
+	&:hover {
 		color: black;
 	}
 `
@@ -33,19 +33,19 @@ const CalendarButton = () => {
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=google">
+					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=google" target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faGoogle} />
 						<StyledText>Google</StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=office365">
+					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=office365" target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faMicrosoft} />
 						<StyledText>Office 365</StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=outlookcom">
+					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=outlookcom" target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faMicrosoft} />
 						<StyledText>Outlook Web</StyledText>
 					</ModalLinks>
@@ -53,11 +53,11 @@ const CalendarButton = () => {
 				<li>
 					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=outlook">
 						<FontAwesomeIcon icon={faMicrosoft} />
-						<StyledText>Outlook5</StyledText>
+						<StyledText>Outlook</StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=yahoo">
+					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=yahoo" target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faYahoo} />
 						<StyledText>Yahoo</StyledText>
 					</ModalLinks>
