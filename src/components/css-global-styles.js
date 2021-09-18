@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { normalize } from "polished"
+import { normalize, em } from "polished";
 
 // Fonts
 import BloomingElegantSans from "../fonts/blooming-elegant-sans.otf";
@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
 	body {
 		padding: 0;
 		font-family: "Open Sans";
+		color: var(--theme-text);
 	}
 
 	ul {
@@ -53,6 +54,34 @@ export const GlobalStyle = createGlobalStyle`
 		&:visited {
 			color: inherit;
 		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Playfair Display';
+	}
+
+	h2 {
+		font-size: ${em('70px')}
+	}
+
+	h3 {
+		font-size: ${em('32px')}
+	}
+
+	h4 {
+		font-size: ${em('24px')}
+	}
+
+	hr {
+		width: 100%;
+		margin: 1rem .5rem .5rem;
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(90deg,rgba(34,34,34,0),rgba(34,34,34,.15),rgba(34,34,34,0));
+	}
+
+	address {
+		font-style: normal;
 	}
 
 	.body-content {

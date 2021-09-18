@@ -19,7 +19,7 @@ const ModalLinks = styled.a`
 	}
 `
 
-const CalendarButton = () => {
+const CalendarButton = ({linkId}) => {
 
 	return (
 		<ModalButton buttonText='Add To Calendar' faIcon={faCalendarDay}>
@@ -27,37 +27,37 @@ const CalendarButton = () => {
 			{/* https://calndr.link/events/zCAqaaenwN?secret=e8SeMx1oI04N4Xh06stLMfyeQa7LBglq4Vd6 */}
 			<ul>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=apple">
+					<ModalLinks href={`https://calndr.link/e/${linkId}?s=apple`}>
 						<FontAwesomeIcon icon={faApple} />
 						<StyledText>Apple</StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=google" target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={`https://calndr.link/e/${linkId}?s=google`} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faGoogle} />
 						<StyledText>Google</StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=office365" target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={`https://calndr.link/e/${linkId}?s=office365`} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faMicrosoft} />
 						<StyledText>Office 365</StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=outlookcom" target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={`https://calndr.link/e/${linkId}?s=outlookcom`} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faMicrosoft} />
 						<StyledText>Outlook Web</StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=outlook">
+					<ModalLinks href={`https://calndr.link/e/${linkId}?s=outlook`}>
 						<FontAwesomeIcon icon={faMicrosoft} />
 						<StyledText>Outlook</StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href="https://calndr.link/e/zCAqaaenwN?s=yahoo" target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={`https://calndr.link/e/${linkId}?s=yahoo`} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faYahoo} />
 						<StyledText>Yahoo</StyledText>
 					</ModalLinks>
