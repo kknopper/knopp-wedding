@@ -23,6 +23,7 @@ const StyledModalButton = styled.button`
 	border: 2px solid var(--theme-text);
 	color: var(--theme-text);
 	box-sizing: border-box;
+	min-width: 200px;
 
 	&.modal-active {
 		pointer-events: none;
@@ -58,6 +59,7 @@ const Modal = styled.div`
 	box-sizing: border-box;
 	left: -2px;
 	overflow: hidden;
+	min-width: 200px;
 
 	.modal-active & {
 		opacity: 1;

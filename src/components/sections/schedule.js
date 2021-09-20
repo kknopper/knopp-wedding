@@ -50,9 +50,15 @@ const Address = styled.address`
 
 const Buttons = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	width: 420px;
+	width: 100%;
+	max-width: 420px;
 	margin: 0 auto;
+
+	button:first-child {
+		margin-bottom: 20px;
+	}
 `;
 
 const Schedule = () => {

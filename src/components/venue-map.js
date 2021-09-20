@@ -20,6 +20,7 @@ export default class VenueMap extends React.Component {
 					preferCanvas={true}
 					center={position}
 					zoom={this.state.zoom}
+					scrollWheelZoom={false}
 				>
 					<LayersControl position="topright">
 						<LayersControl.BaseLayer checked name="Open Street Map">

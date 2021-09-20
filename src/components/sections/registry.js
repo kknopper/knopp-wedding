@@ -37,7 +37,7 @@ const Registry = () => {
 					// ref={iframeRef}
 					id="zola-iframe"
 					title="registry"
-					src={`https://widget.zola.com/v1/widget/registry/aknoppwedding/html?maxItems=12&amp;partnerId=squarespace`}
+					src="https://widget.zola.com/v1/widget/registry/aknoppwedding/html?maxItems=12&partnerId=squarespace"
 					className="zola-registry-iframe"
 					scrolling="no"
 					style={{ height: "1200px", width: "100%", position: "relative" }}
