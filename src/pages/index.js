@@ -27,7 +27,7 @@ const IndexPage = () => {
 				<Hero/>
 				<div className="body-content">
 					<Schedule/>
-					<Travel/>
+					{/* <Travel/> */}
 					<Accommodations/>
 					<Registry/>
 					<Rsvp/>
