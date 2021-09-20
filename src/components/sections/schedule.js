@@ -4,9 +4,9 @@ import { StaticImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { em } from "polished";
-import Section from '../Section';
-import CalendarButton from '../CalendarButton';
-import DirectionsButton from '../DirectionsButton';
+import Section from '../section';
+import CalendarButton from '../calendar-button';
+import DirectionsButton from '../directions-button';
 
 /* import { faRingsWedding } from "@fortawesome/free-solid-svg-icons"; */
 

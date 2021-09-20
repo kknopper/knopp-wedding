@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from "styled-components";
-import ModalButton from "./ModalButton"
+import ModalButton from "./modal-button"
 import {isIOS, isMacOs} from 'react-device-detect';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

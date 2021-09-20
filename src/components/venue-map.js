@@ -1,6 +1,5 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup, Tooltip, LayersControl } from "react-leaflet";
-import DirectionsButton from "./DirectionsButton";
 
 export default class VenueMap extends React.Component {
 	state = {

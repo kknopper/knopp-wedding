@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { faRoute } from "@fortawesome/free-solid-svg-icons";
-import Section from '../Section';
-import VenueMap from '../VenueMap';
+import Section from '../section';
+import VenueMap from '../venue-map';
 
 const StyledSection = styled(Section)`
 	grid-area: travel;

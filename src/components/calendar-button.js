@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from "styled-components";
-import ModalButton from "./ModalButton"
+import ModalButton from "./modal-button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDay, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faApple, faGoogle, faMicrosoft, faYahoo } from "@fortawesome/free-brands-svg-icons";

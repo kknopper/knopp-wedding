@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components'
-import Nav from './Nav';
+import Nav from './nav';
 import { font } from './css-mixins'
 import { useSpring, animated, config } from 'react-spring';
 import { useInView } from "react-intersection-observer";

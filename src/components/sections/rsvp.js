@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Section from '../Section';
-import Form from '../RsvpForm';
+import Section from '../section';
+import Form from '../rsvp-form';
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 
