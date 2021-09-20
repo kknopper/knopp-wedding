@@ -4,11 +4,15 @@ import ModalButton from "./modal-button"
 import {isIOS, isMacOs} from 'react-device-detect';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDirections } from "@fortawesome/free-solid-svg-icons";
+import { faDirections, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faApple, faGoogle, faWaze } from "@fortawesome/free-brands-svg-icons";
 
 const StyledText = styled.span`
 	padding-left: 10px;
+`
+
+const ExtLinkIcon = styled(FontAwesomeIcon)`
+	font-size: 0.5em;
 `
 
 const ModalLinks = styled.a`
@@ -38,20 +42,19 @@ const DirectionsButton = ({location}) => {
 				<li>
 					<ModalLinks href={(isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faApple} />
-						<StyledText>Apple</StyledText>
-						{(isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal}
+						<StyledText>Apple <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
 					<ModalLinks href={directions[location].google} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faGoogle} />
-						<StyledText>Google</StyledText>
+						<StyledText>Google <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
 					<ModalLinks href={directions[location].waze} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faWaze} />
-						<StyledText>Waze</StyledText>
+						<StyledText>Waze <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 			</ul>
