@@ -48,18 +48,21 @@ const DirectionsButton = ({location}) => {
 					<ModalLinks href={(isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faApple} />
 						<StyledText>Apple</StyledText>
+						<p>{(isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal}</p>
 					</ModalLinks>
 				</li>
 				<li>
 					<ModalLinks href={isIOS ? directions[location].google.ios : directions[location].google.normal} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faGoogle} />
 						<StyledText>Google</StyledText>
+						<p>{isIOS ? directions[location].google.ios : directions[location].google.normal}</p>
 					</ModalLinks>
 				</li>
 				<li>
 					<ModalLinks href={isIOS ? directions[location].waze.ios : directions[location].waze.normal} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faWaze} />
 						<StyledText>Waze</StyledText>
+						<p>{isIOS ? directions[location].waze.ios : directions[location].waze.normal}</p>
 					</ModalLinks>
 				</li>
 			</ul>
