@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import Hero from '../components/sections/hero';
 import Schedule from '../components/sections/schedule';
 import Registry from '../components/sections/registry';
-import Travel from '../components/sections/travel';
+// import Travel from '../components/sections/travel';
 import Accommodations from '../components/sections/accommodations';
 import Rsvp from '../components/sections/rsvp';
 
