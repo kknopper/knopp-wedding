@@ -41,6 +41,9 @@ const DirectionsButton = ({location}) => {
 	return (
 		<ModalButton buttonText='Get Directions' faIcon={faDirections}>
 			<ul>
+				<li>isIOS? {`${isIOS}`}</li>
+				<li>isMac? {`${isMacOs}`}</li>
+				<li>is ios or mac? {`${(isIOS || isMacOs)}`}</li>
 				<li>
 					<ModalLinks href={(isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faApple} />
