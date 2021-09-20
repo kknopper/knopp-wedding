@@ -11,9 +11,10 @@ import Rsvp from '../components/sections/rsvp';
 const IndexPage = () => {
 	return (
 		<React.Fragment>
-			<Helmet>
+			<Helmet htmlAttributes={{ lang: 'en' }}>
 				<title>Kevin & Nadia | A Knopp Wedding</title>
 				<link rel="icon" href="https://fav.farm/🚂" />
+				<meta name="description" content="Kevin and Nadia are getting Married! Join us for the weekend to celebrate" />
 				<meta name="theme-color"
 					content="#183905"
 					media="(prefers-color-scheme: light)"
