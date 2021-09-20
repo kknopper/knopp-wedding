@@ -1,19 +1,20 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { faHotel } from "@fortawesome/free-solid-svg-icons";
+import { faRoute } from "@fortawesome/free-solid-svg-icons";
 import Section from '../Section';
 import VenueMap from '../VenueMap';
 
 const StyledSection = styled(Section)`
-	grid-area: accommodations;
+	grid-area: travel;
 `
 
-const Accommodations = () => {
+const Travel = () => {
 	return (
-		<StyledSection id="accommodations" headlineIcon={faHotel}>
+		<StyledSection id="travel" headlineIcon={faRoute}>
 			<VenueMap />
+			<h3>Flying in?</h3>
 		</StyledSection>
 	)
 }
 
-export default Accommodations
+export default Travel

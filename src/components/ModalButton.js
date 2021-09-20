@@ -70,7 +70,7 @@ const Modal = styled.div`
 		transition: all 0.3s ease-in-out;
 
 		&:hover {
-			color: var(--theme-bg);
+			color: var(--theme-bg) !important;
 			background: var(--theme-text);
 		}
 

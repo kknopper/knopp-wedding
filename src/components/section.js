@@ -21,12 +21,17 @@ const SectionContent = styled.div`
 	"headline headline headline"
 	". content .";
 
-	${breakpoint.small`
+	${breakpoint.medium`
 		grid-template-columns: 5% 1fr 5%;
 		grid-template-areas: 
 			"headline headline headline"
 			". content .";
 	`}
+`
+
+const Content = styled.div`
+	grid-area: content;
+	text-align: center;
 `
 
 const Section = ({ id, children, headlineText, headlineIcon }) => {
@@ -36,7 +41,9 @@ const Section = ({ id, children, headlineText, headlineIcon }) => {
 				<SectionHeadline faIcon={headlineIcon || null}>
 					{ headlineText || id }
 				</SectionHeadline>
-				{children}
+				<Content>
+					{children}
+				</Content>
 			</SectionContent>
 		</SectionStyled>
 	)

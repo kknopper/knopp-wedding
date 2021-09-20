@@ -7,9 +7,10 @@ import { useInView } from "react-intersection-observer";
 
 const StyledHeadline = styled(animated.h2)`
 	/* ${font({family: 'Playfair Display', color: 'var(--theme-text)', size: '70px'})}; */
-	text-align: center;
 	grid-area: headline;
+	text-align: center;
 	padding: 30px 0;
+	margin-bottom: 0;
 	display: flex;
 	justify-content: center;
 	align-items: baseline;

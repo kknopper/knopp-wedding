@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { StaticImage } from "gatsby-plugin-image";
 import { useSpring, animated, config } from 'react-spring';
 import { breakpoint } from '../css-mixins';
-import Scroll from '../scroll'
+import Scroll from '../Scroll'
 
 
 const StyledSection = styled.section`

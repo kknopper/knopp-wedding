@@ -31,14 +31,6 @@ const Nav = () => {
 			<StyledUl>
 				<StyledLi>
 					<AnchorLink
-						to="/#details"
-						title="The Deets"
-						className="stripped"
-						stripHash
-					/>
-				</StyledLi>
-				<StyledLi>
-					<AnchorLink
 						to="/#schedule"
 						title="Schedule"
 						className="stripped"

@@ -2,21 +2,21 @@ import * as React from 'react';
 import styled from "styled-components";
 import ModalButton from "./ModalButton"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDay } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDay, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faApple, faGoogle, faMicrosoft, faYahoo } from "@fortawesome/free-brands-svg-icons";
 
 const StyledText = styled.span`
 	padding-left: 10px;
 `
 
+const ExtLinkIcon = styled(FontAwesomeIcon)`
+	font-size: 0.5em;
+`
+
 const ModalLinks = styled.a`
 	display: flex;
 	align-items: center;
 	padding: 10px;
-
-	&:hover {
-		color: black;
-	}
 `
 
 const CalendarButton = ({linkId}) => {
@@ -35,19 +35,19 @@ const CalendarButton = ({linkId}) => {
 				<li>
 					<ModalLinks href={`https://calndr.link/e/${linkId}?s=google`} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faGoogle} />
-						<StyledText>Google</StyledText>
+						<StyledText>Google <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
 					<ModalLinks href={`https://calndr.link/e/${linkId}?s=office365`} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faMicrosoft} />
-						<StyledText>Office 365</StyledText>
+						<StyledText>Office 365 <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
 					<ModalLinks href={`https://calndr.link/e/${linkId}?s=outlookcom`} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faMicrosoft} />
-						<StyledText>Outlook Web</StyledText>
+						<StyledText>Outlook Web <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
@@ -59,7 +59,7 @@ const CalendarButton = ({linkId}) => {
 				<li>
 					<ModalLinks href={`https://calndr.link/e/${linkId}?s=yahoo`} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faYahoo} />
-						<StyledText>Yahoo</StyledText>
+						<StyledText>Yahoo <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 			</ul>

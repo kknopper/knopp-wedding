@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import Layout from '../components/layout';
-import Hero from '../components/sections/hero';
-import Details from '../components/sections/details';
-import Registry from '../components/sections/registry';
-import Schedule from '../components/sections/schedule';
-import Accommodations from '../components/sections/accommodations';
-import Rsvp from '../components/sections/rsvp';
+import Layout from '../components/Layout';
+import Hero from '../components/sections/Hero';
+import Schedule from '../components/sections/Schedule';
+import Registry from '../components/sections/Registry';
+import Travel from '../components/sections/Travel';
+import Accommodations from '../components/sections/Accommodations';
+import Rsvp from '../components/sections/Rsvp';
 
 const IndexPage = () => {
 	return (
@@ -26,8 +26,8 @@ const IndexPage = () => {
 			<Layout>
 				<Hero/>
 				<div className="body-content">
-					<Details/>
 					<Schedule/>
+					<Travel/>
 					<Accommodations/>
 					<Registry/>
 					<Rsvp/>

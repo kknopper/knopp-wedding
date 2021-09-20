@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { faGift } from "@fortawesome/free-solid-svg-icons";
-import Section from '../section';
+import Section from '../Section';
 import { breakpoint } from '../css-mixins'
 
 const Content = styled.div`

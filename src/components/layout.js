@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from "styled-components"
 import { GlobalStyle } from './css-global-styles';
-import Header from './header';
+import Header from './Header';
 import { breakpoint } from './css-mixins'
 
 const StyledMain = styled.main`
