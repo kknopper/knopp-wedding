@@ -25,7 +25,7 @@ const DirectionsButton = ({location}) => {
 	const directions = {
 		venue: {
 			apple: {
-				ios: 'https://maps.apple.com/?address=5401%20Graham%20Hill%20Rd,%20Felton,%20CA%20%2095018,%20United%20States&auid=11055945268064872645&ll=37.040723,-122.062440&lsp=9902&q=Roaring%20Camp%20Railroads&_ext=CjIKBQgEEOIBCgQIBRADCgQIBhBzCgQIChAACgQIUhAHCgQIVRAOCgQIWRABCgUIpAEQARImKYoi/xgwhUJAMTZ09RlyhF7AOQj4JHVWhkJAQcyv7rO5g17AUAQ%3D',
+				ios: 'maps://?address=5401%20Graham%20Hill%20Rd,%20Felton,%20CA%20%2095018,%20United%20States&auid=11055945268064872645&ll=37.040723,-122.062440&lsp=9902&q=Roaring%20Camp%20Railroads&_ext=CjIKBQgEEOIBCgQIBRADCgQIBhBzCgQIChAACgQIUhAHCgQIVRAOCgQIWRABCgUIpAEQARImKYoi/xgwhUJAMTZ09RlyhF7AOQj4JHVWhkJAQcyv7rO5g17AUAQ%3D',
 				normal: 'https://duckduckgo.com/?q=roaring+camp+railroads&t=hy&va=g&ia=web&iaxm=places'
 			},
 			google: {
