@@ -18,7 +18,7 @@ const StyledModalButton = styled.button`
 	align-items: center;
 	position: relative;
 	margin: 0 auto;
-	transition: all 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 	background: #fff;
 	border: 2px solid var(--theme-text);
 	color: var(--theme-text);

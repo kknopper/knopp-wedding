@@ -37,6 +37,7 @@ const Header = () => {
 		triggerOnce: false,
 		rootMargin: '-50%',
 	});
+
 	const animation = useSpring(
 		{ 
 			transform: `translateY(${inView ? "0%" : "-200%"})`,
