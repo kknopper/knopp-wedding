@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import useToggle from "./useToggle"
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useToggle from "./useToggle";
 
 const StyledIcon = styled(FontAwesomeIcon)`
 	transition: all 0.3s ease-in-out;

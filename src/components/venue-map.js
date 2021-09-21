@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import hotelInfo from '../hotels';
 import { MapContainer, TileLayer, Marker, Popup, LayersControl, LayerGroup} from "react-leaflet";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import react from "react";
 
 const Map = styled(MapContainer)`
@@ -11,13 +12,13 @@ const Map = styled(MapContainer)`
 			filter: hue-rotate(120deg);
 		}
 
-		&::nth-child(2) {
+		&:nth-child(2) {
 			filter: hue-rotate(280deg);
 		}
 	}
 `;
 
-function VenueMap({hotel}) {
+function VenueMap({hotel, hotelStateFunc}) {
 	const mapRef = React.useRef();
 	const venueMarkerRef = React.useRef();
 	let markerRefs = [];
@@ -46,6 +47,7 @@ function VenueMap({hotel}) {
 		if (mapRef.current != undefined) {
 			moveToMarker(startPosition, mapRef.current, venueMarkerRef.current, 9);
 		}
+		hotelStateFunc(null);
 	}
 
 	React.useEffect(() => {
@@ -53,7 +55,7 @@ function VenueMap({hotel}) {
 		const { coordonatelat, coordonatelng } = hotel;
 		const map = mapRef.current;
 
-		moveToMarker([coordonatelat, coordonatelng], map, markerRefs[hotel.id], 13);
+		moveToMarker([coordonatelat, coordonatelng], map, markerRefs[hotel.key], 11);
 	}, [hotel, mapRef]);
 
 	return (
@@ -95,9 +97,15 @@ function VenueMap({hotel}) {
 							<LayerGroup>
 								{hotelInfo.map((hotel, index) => (
 									<Marker key={index} position={[hotel.coordonatelat, hotel.coordonatelng,]} 
-										ref={ref => markerRefs[hotel.id] = ref}>
+										ref={ref => markerRefs[hotel.key] = ref}>
 										<Popup>
-											<b>{hotel.name}</b>
+										<AnchorLink
+											to={`/#${hotel.id}`}
+											title={hotel.name}
+											className="stripped"
+											stripHash
+											onAnchorLinkClick={() => hotelStateFunc(hotel.id)}
+										>{hotel.name}</AnchorLink>
 										</Popup>
 									</Marker>
 								))}
