@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from "styled-components";
 import ModalButton from "./modal-button"
 import {isIOS, isMacOs} from 'react-device-detect';
-
+import { rem } from "polished";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDirections, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faApple, faGoogle, faWaze } from "@fortawesome/free-brands-svg-icons";
@@ -12,7 +12,8 @@ const StyledText = styled.span`
 `
 
 const ExtLinkIcon = styled(FontAwesomeIcon)`
-	font-size: 0.5em;
+	font-size: 16px;
+	font-size: ${rem("12px")};
 `
 
 const ModalLinks = styled.a`

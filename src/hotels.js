@@ -9,7 +9,8 @@ const hotelInfo = [
 		coordonatelat: 37.036066519544754,
 		coordonatelng: -122.02431399547507,
 		distance: 4.2,
-		price: "$$$"
+		price: "$$$",
+		zoom: 11
 	},
 	{
 		key: 1,
@@ -21,7 +22,8 @@ const hotelInfo = [
 		coordonatelat: 37.10762139165161,
 		coordonatelng: -122.10882896705864,
 		distance: 6,
-		price: "$$$"
+		price: "$$$",
+		zoom: 11
 	},
 	{
 		key: 2,
@@ -33,7 +35,8 @@ const hotelInfo = [
 		coordonatelat: 37.05420465726589,
 		coordonatelng: -122.01232479193831,
 		distance: 4.6,
-		price: "$$"
+		price: "$$",
+		zoom: 11
 	},
 	{
 		key: 3,
@@ -45,7 +48,8 @@ const hotelInfo = [
 		coordonatelat: 36.97694564169596,
 		coordonatelng: -122.02064546886218,
 		distance: 6.4,
-		price: "$$$"
+		price: "$$$",
+		zoom: 11
 	},
 	{
 		key: 4,
@@ -57,7 +61,8 @@ const hotelInfo = [
 		coordonatelat: 36.97318577833706,
 		coordonatelng: -122.01913797000397,
 		distance: 6.7,
-		price: "$$$"
+		price: "$$$",
+		zoom: 11
 	},
 	// {
 	// 	key: 5,
@@ -68,7 +73,8 @@ const hotelInfo = [
 	// 	coordonatelat: 37.036066519544754,
 	// 	coordonatelng: -122.02431399547507,
 	// 	distance: 4.2,
-	// price: "$$$"
+	// price: "$$$",
+	// zoom: 11
 	// },
 	// {
 	// 	name: "Hilton Scotts Valley",
@@ -78,7 +84,8 @@ const hotelInfo = [
 	// 	coordonatelat: 37.036066519544754,
 	// 	coordonatelng: -122.02431399547507,
 	// 	distance: 4.2,
-	// price: "$$$"
+	// price: "$$$",
+	// zoom: 11
 	// },
 	// {
 	// 	name: "Hilton Scotts Valley",
@@ -88,7 +95,8 @@ const hotelInfo = [
 	// 	coordonatelat: 37.036066519544754,
 	// 	coordonatelng: -122.02431399547507,
 	// 	distance: 4.2,
-	// price: "$$$"
+	// price: "$$$",
+	// zoom: 11
 	// },
 	// {
 	// 	name: "Hilton Scotts Valley",
@@ -98,7 +106,8 @@ const hotelInfo = [
 	// 	coordonatelat: 37.036066519544754,
 	// 	coordonatelng: -122.02431399547507,
 	// 	distance: 4.2,
-	// price: "$$$"
+	// price: "$$$",
+	// zoom: 11
 	// },
 	// {
 	// 	name: "Hilton Scotts Valley",
@@ -108,7 +117,8 @@ const hotelInfo = [
 	// 	coordonatelat: 37.036066519544754,
 	// 	coordonatelng: -122.02431399547507,
 	// 	distance: 4.2,
-	// price: "$$$"
+	// price: "$$$",
+	// zoom: 11
 	// }
 ];
 

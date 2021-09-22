@@ -51,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
 	a {
 		text-decoration: none;
 
-		&:visited {
+		&:visited, &:active {
 			color: inherit;
 		}
 	}

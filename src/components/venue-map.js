@@ -1,32 +1,45 @@
 import React from "react";
-// import { useHasMounted } from "../hooks/useHasMounted";
 import styled from "styled-components";
-import hotelInfo from '../hotels';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDotCircle} from "@fortawesome/free-regular-svg-icons";
 import { MapContainer, TileLayer, Marker, Popup, LayersControl, LayerGroup} from "react-leaflet";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
-import react from "react";
+import hotelInfo from '../hotels';
 
 const Map = styled(MapContainer)`
 	.leaflet-marker-pane img {
-		&:first-child {
+		&[alt="venue"] {
 			filter: hue-rotate(120deg);
 		}
 
-		&:nth-child(2) {
+		&[alt="airport"] {
 			filter: hue-rotate(280deg);
 		}
 	}
 `;
 
-function VenueMap({hotel, hotelStateFunc}) {
+function VenueMap({hotel, updateHotelState}) {
 	const mapRef = React.useRef();
-	const venueMarkerRef = React.useRef();
+	let venueMarkerRef;
 	let markerRefs = [];
 	
 	const start = {
 		lat: 37.040723,
 		lng: -122.062440,
 		zoom: 9
+	};
+
+	const venueData = {
+		key: 0,
+		id: "venue",
+		name: "Roaring Camp",
+		website: "https://www.hilton.com/en/hotels/sjcsvhf-hilton-santa-cruz-scotts-valley/",
+		address: "6001 La Madrona Drive, Santa Cruz, CA, 95060",
+		phone: "831-440-1000",
+		coordonatelat: 37.040723,
+		coordonatelng: -122.062440,
+		distance: 0,
+		price: "$$$"
 	};
 
 	const style = {
@@ -42,20 +55,20 @@ function VenueMap({hotel, hotelStateFunc}) {
 		markerRef.openPopup();
 	}
 
-	const recenter = () => {
-		console.log(mapRef, mapRef.current)
+	const recenter = (zoom = 9) => {
 		if (mapRef.current != undefined) {
-			moveToMarker(startPosition, mapRef.current, venueMarkerRef.current, 9);
+
+			if (hotel.id !== 'venue' || zoom !== 11) {
+				updateHotelState({...venueData, ref: venueMarkerRef, zoom});
+			}
 		}
-		hotelStateFunc(null);
 	}
 
 	React.useEffect(() => {
-		if (!hotel || !mapRef) return;
+		if (hotel.id == undefined || mapRef.current == undefined) return;
 		const { coordonatelat, coordonatelng } = hotel;
 		const map = mapRef.current;
-
-		moveToMarker([coordonatelat, coordonatelng], map, markerRefs[hotel.key], 11);
+		moveToMarker([coordonatelat, coordonatelng], map, hotel.ref, hotel.zoom);
 	}, [hotel, mapRef]);
 
 	return (
@@ -78,14 +91,18 @@ function VenueMap({hotel, hotelStateFunc}) {
 							/>
 						</LayersControl.BaseLayer>
 						<LayersControl.Overlay checked name="Venue 🚂">
-							<Marker position={[37.040723, -122.062440]} ref={venueMarkerRef}>
-								<Popup>
+							<Marker 
+								position={[37.040723, -122.062440]}
+								alt="venue"
+								ref={ref => {venueMarkerRef = ref}}
+							>
+								<Popup onOpen={() => recenter(11)}>
 									<p>Roaring Camp</p>
 								</Popup>
 							</Marker>
 						</LayersControl.Overlay>
 						<LayersControl.Overlay checked name="Airport ✈️">
-							<Marker position={[37.364714, -121.924238]}>
+							<Marker position={[37.364714, -121.924238]} alt="airport">
 								<Popup>
 									<b>San Jose International Airport</b>
 									<br />
@@ -96,16 +113,25 @@ function VenueMap({hotel, hotelStateFunc}) {
 						<LayersControl.Overlay checked name="Hotels 🏨">
 							<LayerGroup>
 								{hotelInfo.map((hotel, index) => (
-									<Marker key={index} position={[hotel.coordonatelat, hotel.coordonatelng,]} 
-										ref={ref => markerRefs[hotel.key] = ref}>
-										<Popup>
-										<AnchorLink
-											to={`/#${hotel.id}`}
-											title={hotel.name}
-											className="stripped"
-											stripHash
-											onAnchorLinkClick={() => hotelStateFunc(hotel.id)}
-										>{hotel.name}</AnchorLink>
+									<Marker 
+										key={index}
+										position={[hotel.coordonatelat, hotel.coordonatelng,]}
+										alt="hotel"
+										ref={
+											(ref) => {
+												markerRefs[hotel.key] = ref;
+												hotel.ref = ref;
+											}
+										}
+									>
+										<Popup onOpen={() => updateHotelState(hotel)}>
+											<AnchorLink
+												to={`/#${hotel.id}`}
+												title={hotel.name}
+												className="stripped"
+												stripHash
+												onAnchorLinkClick={() => updateHotelState(hotel)}
+											>{hotel.name}</AnchorLink>
 										</Popup>
 									</Marker>
 								))}
@@ -113,7 +139,7 @@ function VenueMap({hotel, hotelStateFunc}) {
 						</LayersControl.Overlay>
 					</LayersControl>
 				</Map>
-				<button onClick={() => recenter()}>Recenter Map</button>
+				<button onClick={() => recenter()}><FontAwesomeIcon icon={faDotCircle}></FontAwesomeIcon>Recenter Map</button>
 				</React.Fragment>
 			)}
 		</React.Fragment>

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from "styled-components";
 import ModalButton from "./modal-button"
+import { rem } from "polished";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDay, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faApple, faGoogle, faMicrosoft, faYahoo } from "@fortawesome/free-brands-svg-icons";
@@ -10,7 +11,7 @@ const StyledText = styled.span`
 `
 
 const ExtLinkIcon = styled(FontAwesomeIcon)`
-	font-size: 0.5em;
+	font-size:  ${rem("12px")};
 `
 
 const ModalLinks = styled.a`
