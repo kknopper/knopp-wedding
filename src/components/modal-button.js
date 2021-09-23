@@ -93,7 +93,6 @@ const ModalButton = ({buttonText, faIcon, children}) => {
 	const handleClick = (e) => {
 		if (modalRef.current.contains(e.target)  && !isVisible) {
 			e.preventDefault();
-			console.log('click')
 		}
 		toggleModal();
 	}
