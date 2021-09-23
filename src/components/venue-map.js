@@ -38,32 +38,19 @@ function VenueMap({hotel, updateHotelState}) {
 	const mapRef = React.useRef();
 	let venueMarkerRef;
 	let markerRefs = [];
-	
-	const start = {
+
+	const venue = {
+		id: "venue",
+		name: "Roaring Camp",
 		lat: 37.040723,
 		lng: -122.062440,
 		zoom: 9
 	};
 
-	const venue = {
-		key: 0,
-		id: "venue",
-		name: "Roaring Camp",
-		website: "https://www.hilton.com/en/hotels/sjcsvhf-hilton-santa-cruz-scotts-valley/",
-		address: "6001 La Madrona Drive, Santa Cruz, CA, 95060",
-		phone: "831-440-1000",
-		coordonatelat: 37.040723,
-		coordonatelng: -122.062440,
-		distance: 0,
-		price: "$$$"
-	};
-
-	const style = {
+	const mapStyle = {
 		width: "100%",
 		height: "450px"
 	};
-
-	const startPosition = [start.lat, start.lng];
 
 	const moveToMarker = (coordinates, mapRef, markerRef, zoomLvl) => {
 		const [lat, lon] = coordinates;
@@ -81,9 +68,9 @@ function VenueMap({hotel, updateHotelState}) {
 
 	React.useEffect(() => {
 		if (hotel.id === undefined || mapRef.current === undefined) return;
-		const { coordonatelat, coordonatelng } = hotel;
+		const { lat, lng } = hotel;
 		const map = mapRef.current;
-		moveToMarker([coordonatelat, coordonatelng], map, hotel.ref, hotel.zoom);
+		moveToMarker([lat, lng], map, hotel.ref, hotel.zoom);
 	}, [hotel, mapRef]);
 
 	return (
@@ -91,10 +78,10 @@ function VenueMap({hotel, updateHotelState}) {
 			{typeof window !== 'undefined' && (
 				<React.Fragment>
 					<Map
-						style={style}
+						style={mapStyle}
 						preferCanvas={true}
-						center={startPosition}
-						zoom={start.zoom}
+						center={[venue.lat, venue.lng]}
+						zoom={venue.zoom}
 						scrollWheelZoom={false}
 						whenCreated={ mapInstance => { mapRef.current = mapInstance } }
 					>
@@ -130,7 +117,7 @@ function VenueMap({hotel, updateHotelState}) {
 									{hotelInfo.map((hotel, index) => (
 										<Marker 
 											key={index}
-											position={[hotel.coordonatelat, hotel.coordonatelng,]}
+											position={[hotel.lat, hotel.lng,]}
 											alt="hotel"
 											ref={
 												(ref) => {
@@ -149,7 +136,10 @@ function VenueMap({hotel, updateHotelState}) {
 													className="stripped"
 													stripHash
 													onAnchorLinkClick={() => updateHotelState(hotel)}
-												>{hotel.name}</AnchorLink>
+												>
+													<b>{hotel.name}</b>
+													{/* <p>see info</p> */}
+												</AnchorLink>
 											</Popup>
 										</Marker>
 									))}
@@ -162,7 +152,6 @@ function VenueMap({hotel, updateHotelState}) {
 			)}
 		</React.Fragment>
 	);
-
 }
 
 export default VenueMap
