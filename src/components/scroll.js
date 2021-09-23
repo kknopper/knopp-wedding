@@ -2,6 +2,7 @@ import React from 'react';
 import { animated, useSpring, config } from 'react-spring';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import styled from 'styled-components'
 
 const StyledScroll = styled(animated.div)`
@@ -18,13 +19,17 @@ const StyledScroll = styled(animated.div)`
 	padding-bottom: 5px;
 	text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 	height: 60px;
-`
+`;
+
+const StyledAnchor = styled(AnchorLink)`
+	display: inline-block;
+`;
 
 const StyledIcon = styled(FontAwesomeIcon)`
 	display: block;
 	font-size: 1.5em;
 	margin: 18px auto;
-`
+`;
 
 const Scroll = () => {
 	const fadeIn = useSpring({
@@ -35,10 +40,18 @@ const Scroll = () => {
 		transform: 'translateY(0)'
 	})
 
-	return <StyledScroll style={fadeIn}>
-		Scroll
-		<StyledIcon icon={faAngleDoubleDown} />
-	</StyledScroll>
+	return (
+		<StyledScroll style={fadeIn}>
+			<StyledAnchor
+				to="/#schedule"
+				title="scroll"
+				className="stripped"
+				stripHash
+			>
+				Scroll <StyledIcon icon={faAngleDoubleDown} />
+			</StyledAnchor>
+		</StyledScroll>
+	)
 }
 
 export default Scroll

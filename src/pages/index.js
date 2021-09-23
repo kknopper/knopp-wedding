@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Layout from '../components/layout';
 import Hero from '../components/sections/hero';
 import Schedule from '../components/sections/schedule';
+import Faq from '../components/sections/faq';
 import Registry from '../components/sections/registry';
 import Travel from '../components/sections/traveling';
 import Accommodations from '../components/sections/accommodations';
@@ -28,6 +29,7 @@ const IndexPage = () => {
 				<Hero/>
 				<div className="body-content">
 					<Schedule/>
+					<Faq/>
 					<Travel/>
 					<Accommodations/>
 					<Registry/>

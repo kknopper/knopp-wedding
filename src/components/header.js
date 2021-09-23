@@ -6,7 +6,7 @@ import { useSpring, animated, config } from 'react-spring';
 import { useInView } from "react-intersection-observer";
 
 const StyledHeader = styled(animated.header)`
-	height: 100px;
+	height: 115px;
 	display: flex;
 	justify-content: center;
 	text-align: center;

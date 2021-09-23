@@ -39,6 +39,14 @@ const Nav = () => {
 				</StyledLi>
 				<StyledLi>
 					<AnchorLink
+						to="/#questions"
+						title="FAQ"
+						className="stripped"
+						stripHash
+					/>
+				</StyledLi>
+				<StyledLi>
+					<AnchorLink
 						to="/#travel"
 						title="Travel"
 						className="stripped"
@@ -49,14 +57,6 @@ const Nav = () => {
 					<AnchorLink
 						to="/#accommodations"
 						title="Accommodations"
-						className="stripped"
-						stripHash
-					/>
-				</StyledLi>
-				<StyledLi>
-					<AnchorLink
-						to="/#faq"
-						title="FAQ"
 						className="stripped"
 						stripHash
 					/>
