@@ -23,6 +23,7 @@ const StyledScroll = styled(animated.div)`
 
 const StyledAnchor = styled(AnchorLink)`
 	display: inline-block;
+	color: var(--theme-white);
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -46,7 +47,7 @@ const Scroll = () => {
 				to="/#schedule"
 				title="scroll"
 				className="stripped"
-				stripHash
+				// stripHash
 			>
 				Scroll <StyledIcon icon={faAngleDoubleDown} />
 			</StyledAnchor>

@@ -77,12 +77,12 @@ const Tree = React.memo(({ children, content, icon, style, defaultOpen = false }
 	const previous = usePrevious(isOpen)
 	const [ref, { height: viewHeight }] = useMeasure()
 	const { height, opacity, y } = useSpring({
-	from: { height: 0, opacity: 0, y: 0 },
-	to: {
-		height: isOpen ? viewHeight : 0,
-		opacity: isOpen ? 1 : 0,
-		y: isOpen ? 0 : 20,
-	},
+		from: { height: 0, opacity: 0, y: 0 },
+		to: {
+			height: isOpen ? viewHeight : 0,
+			opacity: isOpen ? 1 : 0,
+			y: isOpen ? 0 : 20,
+		},
 	})
 
 	return (

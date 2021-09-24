@@ -48,29 +48,43 @@ export default class Form extends React.Component {
 			{
 				'tag': 'input',
 				'type': 'text',
-				'name': 'firstname',
+				'name': 'guest-1-firstname',
 				'cf-questions': 'What is your firstname?'
 			},
 			{
 				'tag': 'input',
 				'type': 'text',
-				'name': 'lastname',
+				'name': 'guest-1-lastname',
 				'cf-questions': 'What is your lastname?'
 			},
 			{
 				'tag': 'input',
 				'type': 'text',
-				'name': 'firstname',
+				'name': 'guest-2-firstname',
 				'cf-questions': "What is your plus-one's firstname?",
 				'cf-conditional-guest-number': '2||3'
 			},
 			{
 				'tag': 'input',
 				'type': 'text',
-				'name': 'lastname',
+				'name': 'guest-2-lastname',
 				'cf-questions': "What is your plus-one's lastname?",
 				'cf-conditional-guest-number': '2||3'
-			}
+			},
+			{
+				'tag': 'input',
+				'type': 'text',
+				'name': 'guest-3-firstname',
+				'cf-questions': "What is your plus-two's firstname?",
+				'cf-conditional-guest-number': '3'
+			},
+			{
+				'tag': 'input',
+				'type': 'text',
+				'name': 'guest-2-lastname',
+				'cf-questions': "What is your plus-two's lastname?",
+				'cf-conditional-guest-number': '3'
+			},
 		];
 		
 		this.submitCallback = this.submitCallback.bind(this);
@@ -92,6 +106,14 @@ export default class Form extends React.Component {
 	submitCallback() {
 		var formDataSerialized = this.cf.getFormData(true);
 		this.cf.addRobotChatResponse("You are done. Check the dev console for form data output.", formDataSerialized, )
+		console.log(formDataSerialized);
+
+		// fetch("https://getform.io/f/f4bf0b4a-8fc3-4a1b-bcb0-ed22a7e7eff5", {
+		// 	method: "POST",
+		// 	body: formDataSerialized,
+		// })
+		// .then(response => console.log(response))
+		// .catch(error => console.log(error))
 	}
 
 	render() {
