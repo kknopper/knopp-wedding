@@ -71,7 +71,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#schedule"
 							title="Schedule"
 							className="stripped"
-							// onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleNav()}
 						/>
 					</Li>
 					<Li>
@@ -79,7 +79,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#questions"
 							title="FAQ"
 							className="stripped"
-							// onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleNav()}
 						/>
 					</Li>
 					<Li>
@@ -87,7 +87,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#travel"
 							title="Travel"
 							className="stripped"
-							// onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleNav()}
 						/>
 					</Li>
 					<Li>
@@ -95,7 +95,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#accommodations"
 							title="Accommodations"
 							className="stripped"
-							// onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleNav()}
 						/>
 					</Li>
 					<Li>
@@ -103,7 +103,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#registry"
 							title="Registry"
 							className="stripped"
-							// onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleNav()}
 						/>
 					</Li>
 					<Li>
@@ -111,7 +111,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#rsvp"
 							title="rsvp"
 							className="stripped"
-							// onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleNav()}
 						/>
 					</Li>
 				</ul>
