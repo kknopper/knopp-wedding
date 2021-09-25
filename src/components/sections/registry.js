@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { faGift } from "@fortawesome/free-solid-svg-icons";
 import Section from '../section';
-import { breakpoint, iframeBreakpoint } from '../css-mixins';
+import { iframeBreakpoint } from '../css-mixins';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const Content = styled.div`

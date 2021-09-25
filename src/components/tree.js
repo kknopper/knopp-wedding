@@ -2,10 +2,9 @@ import React, { useRef, useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare, faMinusSquare } from '@fortawesome/free-regular-svg-icons'
 import { faCheckSquare, faLink, faUserTie } from '@fortawesome/free-solid-svg-icons'
-import useMeasure from 'react-use-measure'
-import styled from 'styled-components'
-import { useSpring, a } from '@react-spring/web'
-import { animated, config } from '@react-spring/web'
+import useMeasure from 'react-use-measure';
+import styled from 'styled-components';
+import { useSpring, animated, config} from '@react-spring/web';
 
 const Container = styled('div')`
 	width: 75%;
@@ -100,7 +99,7 @@ const Tree = React.memo(({ children, content, icon, style, defaultOpen = false }
 			)}
 			
 			<Content style={{config: config.slow, opacity, height: isOpen && previous === isOpen ? 'auto' : height,}}>
-				<a.div ref={ref} style={{ y }} children={children} />
+				<animated.div ref={ref} style={{ y }} children={children} />
 			</Content>
 		</Frame>
 	)
@@ -111,7 +110,7 @@ export default function FaqTree() {
 	<Container>
 		<Tree content="What is Roaring Camp?">
 			<Tree content="The dream of preserving a piece of the 1880s and early California was the dream of Roaring Camps Founder F. Norman Clark. Roaring Camp’s steam engines date from 1890 and are among the oldest and most authentically preserved narrow-gauge steam engines providing regularly scheduled passenger service in America." />
-			<Tree content={<a>learn more</a>} icon={faLink} />
+			<Tree content={<a href="https://www.roaringcamp.com/historical-facts" target="_blank" rel="noopener noreferrer">learn more</a>} icon={faLink} />
 		</Tree>
 		<Tree content="Is this a themed wedding?">
 			<Tree icon={faUserTie} content="Nope! Normal wedding attire is just fine 👔 👗" />

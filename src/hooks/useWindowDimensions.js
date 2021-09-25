@@ -1,19 +1,30 @@
 import { useState, useLayoutEffect } from 'react';
 
-function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
+let width, height;
+
+if (typeof window !== `undefined`) {
+	width = window.innerWidth;
+	height = window.innerHeight;
+}
+
+function getWindowDimensions() {	
 	return {
-		width,
-		height
+		width: window.innerWidth,
+		height:  window.innerHeight
 	};
 }
 
 export default function useWindowDimensions() {
-	const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+	const [windowDimensions, setWindowDimensions] = useState({
+		width, height
+	});
 
 	useLayoutEffect(() => {
 		function handleResize() {
-			setWindowDimensions(getWindowDimensions());
+			setWindowDimensions({
+				width: window.innerWidth,
+				height:  window.innerHeight
+			});
 		}
 
 		window.addEventListener('resize', handleResize);

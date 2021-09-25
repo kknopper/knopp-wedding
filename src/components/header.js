@@ -60,7 +60,7 @@ const Header = () => {
 		if (!inView && isNavActive) {
 			toggleNav();
 		}
-	}, [ref, inView])
+	}, [ref, inView, isNavActive, toggleNav])
 
 
 	return (

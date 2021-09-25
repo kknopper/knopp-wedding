@@ -5,7 +5,6 @@ import { breakpoint } from './css-mixins'
 import { useSpring, animated, config } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import useToggle from '../components/useToggle';
 import useMeasure from 'react-use-measure';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 
