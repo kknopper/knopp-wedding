@@ -2,48 +2,64 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { faGift } from "@fortawesome/free-solid-svg-icons";
 import Section from '../section';
-import { breakpoint } from '../css-mixins'
+import { breakpoint, iframeBreakpoint } from '../css-mixins';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const Content = styled.div`
 	--max-items: 12;
 	grid-area: content;
 	width: 100%;
+	overflow: hidden;
+	position: relative;
 
 	.zola-registry-iframe {
-		min-height: 1600px;
+		min-height: 2500px;
 		width: 100%;
-		position: relative;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
 	}
+`;
 
-	${breakpoint.small`
-		--max-items: 8;
+//calculate height of iframe
+const Filler = styled.div`
+	--iframe-header-height: 128px;
+	--square-rows: 6;
+	--square-percent: 50;
+	--width: 1000px;
+	--square-height: calc((((var(--square-percent) / 100) * var(--width)) * var(--square-rows)) + (20px * (var(--square-rows) - 1)) + var(--iframe-header-height));
+	height: var(--square-height);
+
+	//match zola media queries	
+	${iframeBreakpoint.small`
+		--iframe-header-height: 95px;
+		--square-rows: 4;
+		--square-percent: 33.33333333;
 	`}
 
-	${breakpoint.small`
-		--max-items: 6;
+	${iframeBreakpoint.medium`
+		--square-rows: 3;
+		--square-percent: 25;
 	`}
-`
+`;
 
 const Registry = () => {
-	// const iframeRef = React.createRef(null);
-		// console.log(iframeRef.current);
-	// let computed = window.getComputedStyle(iframeRef.current).getPropertyValue("--max-items");
-	// console.log(computed);
-	// const maxItems = 12;
+	const { width } = useWindowDimensions();
+
 	return (
 		<Section id="registry" headlineIcon={faGift}>
 			<Content id="zola-iframe-container">
 				<iframe
-					// ref={iframeRef}
 					id="zola-iframe"
 					title="registry"
 					src="https://widget.zola.com/v1/widget/registry/aknoppwedding/html?maxItems=12&partnerId=squarespace"
 					className="zola-registry-iframe"
 					scrolling="no"
-					style={{ height: "1200px", width: "100%", position: "relative" }}
 					width="100%"
 					frameBorder="0"
 				/>
+				<Filler style={{'--width': (width < 1000) ? `calc(${width}px - (${width}px * 0.1))` : '1000px'}}/>
 			</Content>
 		</Section>
 	)

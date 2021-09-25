@@ -5,7 +5,6 @@ import { font } from './css-mixins'
 import { useSpring, animated, config } from 'react-spring';
 import { useInView } from "react-intersection-observer";
 import { breakpoint } from './css-mixins';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useToggle from './useToggle';
 
 const StyledHeader = styled(animated.header)`

@@ -7,6 +7,12 @@ export const breakpoints = {
 	xsmall: '320px',
 };
 
+export const iframeBreakpoints = {
+	medium: '1069px',
+	small: '853px',
+	xsmall: '480px',
+};
+
 //Usage:
 // ${breakpoint.small`
 //   ...css
@@ -16,6 +22,18 @@ export const breakpoint = Object.keys(breakpoints).reduce(
 	(accumulator, label) => {
 		accumulator[label] = (...args) => css`
 			@media (max-width: ${breakpoints[label]}) {
+				${css(...args)};
+			}
+		`;
+		return accumulator;
+	},
+	{}
+);
+
+export const iframeBreakpoint = Object.keys(iframeBreakpoints).reduce(
+	(accumulator, label) => {
+		accumulator[label] = (...args) => css`
+			@media (min-width: ${iframeBreakpoints[label]}) {
 				${css(...args)};
 			}
 		`;

@@ -5,7 +5,7 @@ import { faCheckSquare, faLink, faUserTie } from '@fortawesome/free-solid-svg-ic
 import useMeasure from 'react-use-measure'
 import styled from 'styled-components'
 import { useSpring, a } from '@react-spring/web'
-import { animated } from '@react-spring/web'
+import { animated, config } from '@react-spring/web'
 
 const Container = styled('div')`
 	width: 75%;
@@ -99,7 +99,7 @@ const Tree = React.memo(({ children, content, icon, style, defaultOpen = false }
 				</Answer>
 			)}
 			
-			<Content style={{opacity, height: isOpen && previous === isOpen ? 'auto' : height,}}>
+			<Content style={{config: config.slow, opacity, height: isOpen && previous === isOpen ? 'auto' : height,}}>
 				<a.div ref={ref} style={{ y }} children={children} />
 			</Content>
 		</Frame>
