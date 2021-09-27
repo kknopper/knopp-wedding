@@ -17,12 +17,12 @@ const StyledHeader = styled(animated.header)`
 	box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
 	box-sizing: border-box;
 	grid-area: header;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	/* border-bottom: 1px solid rgb(34, 34, 34); */
 	background: #FFF;
-	z-index: 2;
+	z-index: -1;
 `
 
 const H1 = styled.h1`
@@ -48,6 +48,7 @@ const Header = () => {
 
 	const animation = useSpring(
 		{ 
+			zIndex: `${inView ? "2" : "-1"}`,
 			transform: `translateY(${inView ? "0%" : "-200%"})`,
 			config: config.slow,
 		}
@@ -64,7 +65,7 @@ const Header = () => {
 
 
 	return (
-		<StyledHeader style={{position:'fixed', ...animation}}>
+		<StyledHeader style={{animation}}>
 			<H1>Kevin & Nadia</H1>
 			<Nav isNavActive={isNavActive} toggleNav={toggleNav} headerInView={inView} />
 		</StyledHeader>

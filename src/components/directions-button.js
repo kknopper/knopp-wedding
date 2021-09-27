@@ -42,7 +42,7 @@ const DirectionsButton = ({location}) => {
 			<ul>
 				<li>
 					<ModalLinks href={(isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal} target="_blank" rel="noopener noreferrer">
-						{isIOS ? 'working':'no working'}
+						{isIOS ? directions[location].apple.ios :'not working'}
 						{/* <FontAwesomeIcon icon={faApple} /> */}
 						<StyledText>Apple <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
