@@ -41,13 +41,13 @@ const DirectionsButton = ({location}) => {
 	const appleLink = (isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal;
 	const googleLink = directions[location].google;
 	const wazeLink = directions[location].waze;
-
+	console.log(appleLink);
 	return (
 		<ModalButton buttonText='Get Directions' faIcon={faDirections}>
 			<ul>
 				<li>
 					<ModalLinks href={appleLink} target="_blank" rel="noopener noreferrer">
-						{(isIOS || isMacOs) ? directions[location].apple.ios :'not working'}
+						{(isIOS || isMacOs) ? directions[location].apple.ios :'broken'}
 						{/* <FontAwesomeIcon icon={faApple} /> */}
 						<StyledText>Apple <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
