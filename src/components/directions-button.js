@@ -37,24 +37,29 @@ const DirectionsButton = ({location}) => {
 			waze: 'https://ul.waze.com/ul?preview_venue_id=155910514.1559367288.290454&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'
 		}
 	}
+
+	const appleLink = (isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal;
+	const googleLink = directions[location].google;
+	const wazeLink = directions[location].waze;
+
 	return (
 		<ModalButton buttonText='Get Directions' faIcon={faDirections}>
 			<ul>
 				<li>
-					<ModalLinks href={(isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal} target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={appleLink} target="_blank" rel="noopener noreferrer">
 						{(isIOS || isMacOs) ? directions[location].apple.ios :'not working'}
 						{/* <FontAwesomeIcon icon={faApple} /> */}
 						<StyledText>Apple <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href={directions[location].google} target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={googleLink} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faGoogle} />
 						<StyledText>Google <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href={directions[location].waze} target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={wazeLink} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faWaze} />
 						<StyledText>Waze <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
