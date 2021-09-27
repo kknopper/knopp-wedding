@@ -37,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 		padding: 0;
 		font-family: "Open Sans";
 		color: var(--theme-text);
+		overflow-x: hidden;
 	}
 
 	ul {
