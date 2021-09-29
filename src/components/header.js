@@ -22,7 +22,7 @@ const StyledHeader = styled(animated.header)`
 	width: 100%;
 	/* border-bottom: 1px solid rgb(34, 34, 34); */
 	background: #FFF;
-	z-index: -1;
+	z-index: 2;
 `
 
 const H1 = styled.h1`
