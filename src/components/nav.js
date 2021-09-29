@@ -51,7 +51,7 @@ const Hamburger = styled(FontAwesomeIcon)`
 `;
 
 
-const Nav = ({isNavActive, toggleNav, headerInView}) => {
+const Nav = ({isMobileNavActive, toggleMobileNav, headerInView}) => {
 	const [ref, { height: viewHeight }] = useMeasure();
 	const [isLoaded, rehydrate] = React.useState(false);
 
@@ -59,13 +59,13 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 	const navInView = width > 734 
 
 	const {height} = useSpring({
-		height: isNavActive && headerInView ? viewHeight : 0,
-		config: config.stiff
+		height: isMobileNavActive && headerInView ? viewHeight : 0,
 	});
 
 	React.useEffect(() => {
 		rehydrate(true);
-	}, []);
+		if (isMobileNavActive) toggleMobileNav();
+	}, [navInView]);
 
 	return (
 		<React.Fragment>
@@ -76,7 +76,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#schedule"
 							title="Schedule"
 							className="stripped"
-							onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleMobileNav()}
 						/>
 					</Li>
 					<Li>
@@ -84,7 +84,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#questions"
 							title="FAQ"
 							className="stripped"
-							onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleMobileNav()}
 						/>
 					</Li>
 					<Li>
@@ -92,7 +92,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#travel"
 							title="Travel"
 							className="stripped"
-							onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleMobileNav()}
 						/>
 					</Li>
 					<Li>
@@ -100,7 +100,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#accommodations"
 							title="Accommodations"
 							className="stripped"
-							onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleMobileNav()}
 						/>
 					</Li>
 					<Li>
@@ -108,7 +108,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#registry"
 							title="Registry"
 							className="stripped"
-							onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleMobileNav()}
 						/>
 					</Li>
 					<Li>
@@ -116,12 +116,12 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 							to="/#rsvp"
 							title="rsvp"
 							className="stripped"
-							onAnchorLinkClick={() => toggleNav()}
+							onAnchorLinkClick={() => toggleMobileNav()}
 						/>
 					</Li>
 				</ul>
 			</StyledNav>
-			<Hamburger icon={faBars} onClick={() => toggleNav()} />
+			<Hamburger icon={faBars} onClick={() => toggleMobileNav()} />
 		</React.Fragment>
 	)
 }

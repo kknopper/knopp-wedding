@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
 	return (
 		<React.Fragment>
 			<GlobalStyle />
-			<StyledMain>
+			<StyledMain id="hero">
 				<Header />
 				{children}
 			</StyledMain>

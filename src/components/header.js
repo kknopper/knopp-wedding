@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components'
 import Nav from './nav';
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { font } from './css-mixins'
 import { useSpring, animated, config } from 'react-spring';
 import { useInView } from "react-intersection-observer";
@@ -22,15 +23,18 @@ const StyledHeader = styled(animated.header)`
 	width: 100%;
 	/* border-bottom: 1px solid rgb(34, 34, 34); */
 	background: #FFF;
-	z-index: 2;
+	z-index: -1;
 	transform: translateY(-200%);
 `
+const Anchor = styled(AnchorLink)`
+	display: block;
+	flex-basis: 100%;
+`;
 
 const H1 = styled.h1`
 	${font({family: 'Playfair Display', color: 'rgb(34, 34, 34)', size: '2em'})};
 	line-height: 30px;
 	margin: 0;
-	flex-basis: 100%;
 	padding-top: 20px;
 
 	${breakpoint.small`
@@ -45,7 +49,7 @@ const Header = () => {
 		triggerOnce: false,
 		rootMargin: '-50%',
 	});
-	const [isNavActive, toggleNav] = useToggle();
+	const [isMobileNavActive, toggleMobileNav] = useToggle();
 
 	const animation = useSpring(
 		{ 
@@ -58,16 +62,23 @@ const Header = () => {
 		const detailsEl = typeof document !== "undefined" && document.querySelector(".body-content")
 		ref(detailsEl);
 
-		if (!inView && isNavActive) {
-			toggleNav();
+		if (!inView && isMobileNavActive) {
+			toggleMobileNav();
 		}
-	}, [ref, inView, isNavActive, toggleNav])
+	}, [ref, inView, isMobileNavActive, toggleMobileNav])
 
 	//zIndex:!inView ? -1 : 2
 	return (
-		<StyledHeader style={{...animation}}>
-			<H1>Kevin & Nadia</H1>
-			<Nav isNavActive={isNavActive} toggleNav={toggleNav} headerInView={inView} />
+		<StyledHeader style={{zIndex:!inView ? 2 : 2, ...animation}}>
+			<Anchor
+				to="/#hero"
+				title="Hero"
+				className="stripped"
+				onAnchorLinkClick={() => { if (isMobileNavActive) toggleMobileNav() }}
+			>
+				<H1>Kevin & Nadia</H1>
+			</Anchor>
+			<Nav isMobileNavActive={isMobileNavActive} toggleMobileNav={toggleMobileNav} headerInView={inView} />
 		</StyledHeader>
 	)
 }
