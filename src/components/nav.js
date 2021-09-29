@@ -54,16 +54,23 @@ const Hamburger = styled(FontAwesomeIcon)`
 
 const Nav = ({isNavActive, toggleNav, headerInView}) => {
 	const [ref, { height: viewHeight }] = useMeasure();
+	const [isLoaded, rehydrate] = React.useState(false);
+
 	const { width } = useWindowDimensions();
 	const navInView = width > 734 
 
 	const {height} = useSpring({
 		height: isNavActive && headerInView ? viewHeight : 0,
-	})
+		config: config.slow
+	});
+
+	React.useEffect(() => {
+		rehydrate(true);
+	}, []);
 
 	return (
 		<React.Fragment>
-			<StyledNav style={{config: config.slow, height: navInView ? 'auto' : height}} >
+			<StyledNav key={isLoaded} style={{height: navInView ? 'auto' : height}} >
 				<ul ref={ref}>
 					<Li>
 						<AnchorLink
