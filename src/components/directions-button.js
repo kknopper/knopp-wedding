@@ -27,6 +27,12 @@ const ModalLinks = styled.a`
 `
 
 const DirectionsButton = ({location}) => {
+	const [isLoaded, rehydrate] = React.useState(false);
+
+	React.useEffect(() => {
+		rehydrate(true);
+	}, []);
+
 	const directions = {
 		venue: {
 			apple: {
@@ -38,28 +44,24 @@ const DirectionsButton = ({location}) => {
 		}
 	}
 
-	const appleLink = (isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal;
-	const googleLink = directions[location].google;
-	const wazeLink = directions[location].waze;
-	console.log(appleLink);
 	return (
 		<ModalButton buttonText='Get Directions' faIcon={faDirections}>
 			<ul>
 				<li>
-					<ModalLinks href={directions[location].apple.ios} target="_blank" rel="noopener noreferrer">
+					<ModalLinks key={isLoaded} href={(isIOS || isMacOs) ? directions[location].apple.ios :'broken'} target="_blank" rel="noopener noreferrer">
 						{(isIOS || isMacOs) ? directions[location].apple.ios :'broken'}
-						{/* <FontAwesomeIcon icon={faApple} /> */}
+						<FontAwesomeIcon icon={faApple} />
 						<StyledText>Apple <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href={googleLink} target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={directions[location].google} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faGoogle} />
 						<StyledText>Google <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
 				</li>
 				<li>
-					<ModalLinks href={wazeLink} target="_blank" rel="noopener noreferrer">
+					<ModalLinks href={directions[location].waze} target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faWaze} />
 						<StyledText>Waze <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
