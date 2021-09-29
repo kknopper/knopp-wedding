@@ -23,7 +23,7 @@ const StyledHeader = styled(animated.header)`
 	width: 100%;
 	/* border-bottom: 1px solid rgb(34, 34, 34); */
 	background: #FFF;
-	z-index: -1;
+	z-index: 2;
 	transform: translateY(-200%);
 `
 const Anchor = styled(AnchorLink)`
@@ -67,9 +67,8 @@ const Header = () => {
 		}
 	}, [ref, inView, isMobileNavActive, toggleMobileNav])
 
-	//zIndex:!inView ? -1 : 2
 	return (
-		<StyledHeader style={{zIndex:!inView ? 2 : 2, ...animation}}>
+		<StyledHeader style={animation}>
 			<Anchor
 				to="/#hero"
 				title="Hero"
