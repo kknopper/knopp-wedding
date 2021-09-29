@@ -34,7 +34,6 @@ const Li = styled.li`
 	${breakpoint.small`
 		display: block;
 		padding: 10px;
-		background: gray;
 	`}
 `;
 
