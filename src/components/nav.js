@@ -61,7 +61,7 @@ const Nav = ({isNavActive, toggleNav, headerInView}) => {
 
 	const {height} = useSpring({
 		height: isNavActive && headerInView ? viewHeight : 0,
-		config: config.slow
+		config: config.stiff
 	});
 
 	React.useEffect(() => {
