@@ -46,6 +46,11 @@ const Filler = styled.div`
 
 const Registry = () => {
 	const { width } = useWindowDimensions();
+	const [isLoaded, rehydrate] = React.useState(false);
+
+	React.useEffect(() => {
+		rehydrate(true);
+	}, [width]);
 
 	return (
 		<Section id="registry" headlineIcon={faGift}>
@@ -60,7 +65,7 @@ const Registry = () => {
 					width="100%"
 					frameBorder="0"
 				/>
-				<Filler key={width} style={{'--width': (width < 1000) ? `calc(${width}px - (${width}px * 0.1))` : '1000px'}}/>
+				<Filler key={isLoaded} style={{'--width': (width < 1000) ? `calc(${width}px - (${width}px * 0.1))` : '1000px'}}/>
 			</Content>
 		</Section>
 	)
