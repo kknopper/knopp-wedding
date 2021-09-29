@@ -60,7 +60,7 @@ const Registry = () => {
 					width="100%"
 					frameBorder="0"
 				/>
-				<Filler style={{'--width': (width < 1000) ? `calc(${width}px - (${width}px * 0.1))` : '1000px'}}/>
+				<Filler key={width} style={{'--width': (width < 1000) ? `calc(${width}px - (${width}px * 0.1))` : '1000px'}}/>
 			</Content>
 		</Section>
 	)
