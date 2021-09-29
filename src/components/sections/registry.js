@@ -50,11 +50,10 @@ const Registry = () => {
 
 	React.useEffect(() => {
 		rehydrate(true);
-	}, [width]);
+	}, []);
 
 	return (
 		<Section id="registry" headlineIcon={faGift}>
-			{width}
 			<Content id="zola-iframe-container">
 				<iframe
 					id="zola-iframe"
