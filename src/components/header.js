@@ -48,7 +48,6 @@ const Header = () => {
 
 	const animation = useSpring(
 		{ 
-			zIndex: `${inView ? "2" : "-1"}`,
 			transform: `translateY(${inView ? "0%" : "-200%"})`,
 			config: config.slow,
 		}
@@ -63,9 +62,9 @@ const Header = () => {
 		}
 	}, [ref, inView, isNavActive, toggleNav])
 
-
+	//zIndex:!inView ? -1 : 2
 	return (
-		<StyledHeader style={{animation}}>
+		<StyledHeader style={{...animation}}>
 			<H1>Kevin & Nadia</H1>
 			<Nav isNavActive={isNavActive} toggleNav={toggleNav} headerInView={inView} />
 		</StyledHeader>

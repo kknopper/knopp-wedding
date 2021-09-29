@@ -7,13 +7,6 @@ if (typeof window !== `undefined`) {
 	height = window.innerHeight;
 }
 
-// function getWindowDimensions() {	
-// 	return {
-// 		width: window.innerWidth,
-// 		height:  window.innerHeight
-// 	};
-// }
-
 export default function useWindowDimensions() {
 	const [windowDimensions, setWindowDimensions] = useState({
 		width, height
