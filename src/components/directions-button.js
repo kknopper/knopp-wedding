@@ -48,8 +48,7 @@ const DirectionsButton = ({location}) => {
 		<ModalButton buttonText='Get Directions' faIcon={faDirections}>
 			<ul>
 				<li>
-					<ModalLinks key={isLoaded} href={(isIOS || isMacOs) ? directions[location].apple.ios :'broken'} target="_blank" rel="noopener noreferrer">
-						{(isIOS || isMacOs) ? directions[location].apple.ios :'broken'}
+					<ModalLinks key={isLoaded} href={(isIOS || isMacOs) ? directions[location].apple.ios : directions[location].apple.normal } target="_blank" rel="noopener noreferrer">
 						<FontAwesomeIcon icon={faApple} />
 						<StyledText>Apple <ExtLinkIcon icon={faExternalLinkAlt} /></StyledText>
 					</ModalLinks>
