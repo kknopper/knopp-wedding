@@ -1,12 +1,6 @@
 import * as React from 'react';
 import styled from "styled-components";
-
-//Conversational Form Workaround
-// import loadable from '@loadable/component';
-// const { ConversationalForm } = loadable.lib(() => import('conversational-form'))
 import { ConversationalForm, EventDispatcher, UserInputEvents } from "conversational-form";
-
-
 
 const StyledForm = styled.form`
 	margin: 0 auto;
@@ -88,7 +82,7 @@ export default class Form extends React.Component {
 		];
 		
 		this.submitCallback = this.submitCallback.bind(this);
-		this.flowCallback = this.flowCallback.bind(this);
+		this.encode = this.encode.bind(this);
 	}
 
 	componentDidMount() {
@@ -96,58 +90,55 @@ export default class Form extends React.Component {
 		
 		this.cf = ConversationalForm.startTheConversation({
 			options: {
-			submitCallback: this.submitCallback,
-			// flowStepCallback: this.flowCallback,
-			preventAutoFocus: false,
-			eventDispatcher: dispatcher,
-
-			// loadExternalStyleSheet: false
+				submitCallback: this.submitCallback,
+				preventAutoFocus: false,
+				preventAutoStart: true,
+				eventDispatcher: dispatcher,
+				theme: 'dark',
 			},
 			tags: this.formFields,
-			// formEl: this.elem
 		});
+
+		this.cf.start();
 
 		dispatcher.addEventListener(UserInputEvents.SUBMIT, (event) =>{
 			console.log(this.cf.options);
-			// this.cf.preventAutoFocus = false;
-			// window.ConversationalForm.preventAutoFocus = false;
-
-			// console.log(this.cf.options);
+			console.log(this.cf.userInput.inputElement);
 			this.cf.userInput.inputElement.focus();
-
-		}, false);
-
-		
-		console.log(dispatcher)
-		
+		});
 
 		this.elem.appendChild(this.cf.el);
+	}
+	
+	encode(data) {
+		return Object.keys(data)
+			.map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+			.join("&")
 	}
 
 	submitCallback() {
 		var formDataSerialized = this.cf.getFormData(true);
-		this.cf.addRobotChatResponse("You are done. Check the dev console for form data output.", formDataSerialized, )
 		console.log(formDataSerialized);
+		this.cf.addRobotChatResponse("Thank you for your responses. Submitting data...", formDataSerialized)
+		console.log(formDataSerialized, this.encode(formDataSerialized));
+		fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: this.encode({
+				"form-name": this.honey.getAttribute("name"),
+				...formDataSerialized
+			})
+		}).then(() => {
+			this.cf.addRobotChatResponse("Data Sent. Thanks for for RSVPing!", formDataSerialized)
+		}).catch(error => alert(error))
 
-		// fetch("https://getform.io/f/f4bf0b4a-8fc3-4a1b-bcb0-ed22a7e7eff5", {
-		// 	method: "POST",
-		// 	body: formDataSerialized,
-		// })
-		// .then(response => console.log(response))
-		// .catch(error => console.log(error))
-	}
-
-	flowCallback(dto, success, error) {
-		console.log(this.cf.userInput)
-		if (typeof window !== `undefined`) {
-			success();
-			this.cf.userInput.setFocusOnInput()
-		}
 	}
 
 	render() {
 		return (
-			<StyledForm ref={ref => this.elem = ref} />
+			<StyledForm ref={ref => this.elem = ref} name="rsvp-form" netlify-honeypot="form-name" data-netlify="true">
+				<input type="hidden" name="form-name" value="rsvp-form" ref={ref => this.honey = ref} />
+			</StyledForm>
 		);
 	}
 }
