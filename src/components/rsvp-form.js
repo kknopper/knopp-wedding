@@ -98,7 +98,7 @@ export default class Form extends React.Component {
 			options: {
 			submitCallback: this.submitCallback,
 			// flowStepCallback: this.flowCallback,
-			preventAutoFocus: true,
+			preventAutoFocus: false,
 			eventDispatcher: dispatcher,
 
 			// loadExternalStyleSheet: false
