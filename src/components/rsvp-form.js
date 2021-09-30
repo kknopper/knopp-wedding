@@ -118,14 +118,17 @@ export default class Form extends React.Component {
 
 	submitCallback() {
 		var formDataSerialized = this.cf.getFormData(true);
-		console.log(formDataSerialized);
+
 		this.cf.addRobotChatResponse("Thank you for your responses. Submitting data...", formDataSerialized)
-		console.log(formDataSerialized, this.encode(formDataSerialized));
+		console.log(formDataSerialized, this.encode({
+			"form-name": "rsvpForm",
+			...formDataSerialized
+		}));
 		fetch("/", {
 			method: "POST",
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: this.encode({
-				"form-name": this.honey.getAttribute("name"),
+				"form-name": "rsvpForm",
 				...formDataSerialized
 			})
 		}).then(() => {
@@ -136,8 +139,8 @@ export default class Form extends React.Component {
 
 	render() {
 		return (
-			<StyledForm ref={ref => this.elem = ref} name="rsvp-form" netlify-honeypot="form-name" data-netlify="true">
-				<input type="hidden" name="form-name" value="rsvp-form" ref={ref => this.honey = ref} />
+			<StyledForm ref={ref => this.elem = ref} name="rsvpForm" data-netlify="true">
+				<input type="hidden" name="form-name" value="rsvpForm" ref={ref => this.honey = ref} />
 			</StyledForm>
 		);
 	}
