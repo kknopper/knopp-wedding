@@ -27,8 +27,11 @@ const StyledHeader = styled(animated.header)`
 	transform: translateY(-200%);
 `
 const Anchor = styled(AnchorLink)`
-	display: block;
 	flex-basis: 100%;
+
+	${breakpoint.small`
+		flex-basis: auto;
+	`}
 `;
 
 const H1 = styled.h1`
@@ -38,7 +41,6 @@ const H1 = styled.h1`
 	padding-top: 20px;
 
 	${breakpoint.small`
-		order: 2;
 		padding: 35px;
 	`}
 `;

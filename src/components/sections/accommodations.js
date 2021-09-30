@@ -45,8 +45,9 @@ const Hotel = styled.li`
 	}
 `;
 
-const HotelName = styled.h4`
+const HotelName = styled.h3`
 	margin: 25px 0 25px;
+	font-size: 1.5em;
 
 	${breakpoint.xsmall`
 		font-size: ${rem(20)}

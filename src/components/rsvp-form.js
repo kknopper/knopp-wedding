@@ -4,7 +4,7 @@ import styled from "styled-components";
 //Conversational Form Workaround
 // import loadable from '@loadable/component';
 // const { ConversationalForm } = loadable.lib(() => import('conversational-form'))
-import { ConversationalForm } from "conversational-form";
+import { ConversationalForm, EventDispatcher, UserInputEvents } from "conversational-form";
 
 
 
@@ -88,18 +88,39 @@ export default class Form extends React.Component {
 		];
 		
 		this.submitCallback = this.submitCallback.bind(this);
+		this.flowCallback = this.flowCallback.bind(this);
 	}
 
 	componentDidMount() {
+		const dispatcher = new EventDispatcher();
+		
 		this.cf = ConversationalForm.startTheConversation({
 			options: {
 			submitCallback: this.submitCallback,
+			// flowStepCallback: this.flowCallback,
 			preventAutoFocus: true,
+			eventDispatcher: dispatcher,
+
 			// loadExternalStyleSheet: false
 			},
 			tags: this.formFields,
 			// formEl: this.elem
 		});
+
+		dispatcher.addEventListener(UserInputEvents.SUBMIT, (event) =>{
+			console.log(this.cf.options);
+			// this.cf.preventAutoFocus = false;
+			// window.ConversationalForm.preventAutoFocus = false;
+
+			// console.log(this.cf.options);
+			this.cf.userInput.inputElement.focus();
+
+		}, false);
+
+		
+		console.log(dispatcher)
+		
+
 		this.elem.appendChild(this.cf.el);
 	}
 
@@ -114,6 +135,14 @@ export default class Form extends React.Component {
 		// })
 		// .then(response => console.log(response))
 		// .catch(error => console.log(error))
+	}
+
+	flowCallback(dto, success, error) {
+		console.log(this.cf.userInput)
+		if (typeof window !== `undefined`) {
+			success();
+			this.cf.userInput.setFocusOnInput()
+		}
 	}
 
 	render() {
