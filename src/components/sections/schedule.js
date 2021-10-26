@@ -33,6 +33,11 @@ const H4 = styled.h4`
 	margin-bottom: 10px;
 `;
 
+const H5 = styled.h5`
+	margin-bottom: 10px;
+	margin-top: 0;
+`;
+
 const Time = styled.time`
 	font-style: italic;
 `;
@@ -93,9 +98,10 @@ const Schedule = () => {
 				<p>Saturday March 12th, 2022</p>
 				<Time>10:00am - 12pm</Time>
 				<Address>
-					<H4>Hotel</H4>
-					<p>5401 Graham Hill Road</p>
-					<p>Felton, CA 95018</p>
+					<H4>Four Points by Sheraton</H4>
+					<H5>Redwood Room</H5>
+					<p>5030 Scotts Valley Drive</p>
+					<p>Scotts Valley, CA, 95066</p>
 				</Address>
 				<Buttons>
 					<CalendarButton linkId="zCAqaaenwN" />

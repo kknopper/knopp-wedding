@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize, em } from "polished";
+import { breakpoint } from "./css-mixins";
 
 // Fonts
 import BloomingElegantSans from "../fonts/blooming-elegant-sans.otf";
@@ -40,6 +41,38 @@ export const GlobalStyle = createGlobalStyle`
 		overflow-x: hidden;
 	}
 
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Playfair Display';
+	}
+
+	h2 {
+		font-size: ${em('70px')};
+
+		${breakpoint.medium`
+			font-size: ${em('56px')}
+		`}
+	}
+
+	h3 {
+		font-size: ${em('32px')}
+	}
+
+	h4 {
+		font-size: ${em('24px')}
+	}
+
+	h5 {
+		font-size: ${em('20px')}
+	}
+
+	hr {
+		width: 100%;
+		margin: 1rem .5rem .5rem;
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(90deg,rgba(34,34,34,0),rgba(34,34,34,.15),rgba(34,34,34,0));
+	}
+
 	ul {
 		padding-left: 0;
 		margin: 0;
@@ -57,28 +90,16 @@ export const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Playfair Display';
-	}
-
-	h2 {
-		font-size: ${em('70px')}
-	}
-
-	h3 {
-		font-size: ${em('32px')}
-	}
-
-	h4 {
-		font-size: ${em('24px')}
-	}
-
-	hr {
-		width: 100%;
-		margin: 1rem .5rem .5rem;
-		border: 0;
-		height: 1px;
-		background-image: linear-gradient(90deg,rgba(34,34,34,0),rgba(34,34,34,.15),rgba(34,34,34,0));
+	code {
+		display: inline-block;
+		border: 1px solid;
+		border-color: var(---theme-text);
+		border-radius: 3px;
+		padding: 6px 5px 5px;
+		font-family: Helvetica;
+		font-weight: 600;
+		letter-spacing: 1px;
+		line-height: 14px;
 	}
 
 	address {

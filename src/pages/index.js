@@ -37,8 +37,8 @@ const IndexPage = () => {
 					<Faq/>
 					<Travel/>
 					<Accommodations/>
-					<Registry/>
 					<Rsvp/>
+					<Registry/>
 				</div>
 			</Layout>
 		</React.Fragment>

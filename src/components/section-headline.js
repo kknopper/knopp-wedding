@@ -15,7 +15,7 @@ const StyledHeadline = styled(animated.h2)`
 	justify-content: center;
 	align-items: baseline;
 
-	${breakpoint.small`
+	${breakpoint.xsmall`
 		font-size: 2em;
 	`}
 `

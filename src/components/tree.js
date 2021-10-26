@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare, faMinusSquare } from '@fortawesome/free-regular-svg-icons'
-import { faCheckSquare, faLink, faUserTie } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faLink, faUserTie, faLocomotive } from '@fortawesome/free-solid-svg-icons'
 import useMeasure from 'react-use-measure';
 import styled from 'styled-components';
 import { useSpring, animated, config} from '@react-spring/web';
@@ -108,12 +108,21 @@ const Tree = React.memo(({ children, content, icon, style, defaultOpen = false }
 export default function FaqTree() {
 	return (
 	<Container>
-		<Tree content="What is Roaring Camp?">
-			<Tree content="The dream of preserving a piece of the 1880s and early California was the dream of Roaring Camps Founder F. Norman Clark. Roaring Camp’s steam engines date from 1890 and are among the oldest and most authentically preserved narrow-gauge steam engines providing regularly scheduled passenger service in America." />
-			<Tree content={<a href="https://www.roaringcamp.com/historical-facts" target="_blank" rel="noopener noreferrer">learn more</a>} icon={faLink} />
+		<Tree content="What's with the train?">
+			<Tree content="Roaring Camp is a vintage train-depot. Your invitation includes complementary tickets to ride the steam train. All guests will need to board the train which will take you on a 15 minute ride to the cathedral grove, where our ceremony will take place, after which we'll ride back to Roaring Camp, where our reception will be held. All Aboard!" />
+			<Tree content="I don't like trains" icon={faLocomotive}>
+				<Tree content="If for whatever reason you don't want to ride the train, let us know in the RSVP form, so we can make special accommodations" icon={faLocomotive} />
+			</Tree>
 		</Tree>
-		<Tree content="Is this a themed wedding?">
-			<Tree icon={faUserTie} content="Nope! Normal wedding attire is just fine 👔 👗" />
+		<Tree content="What is Roaring Camp?">
+			<Tree content="Roaring Camp Railroads is a vintage train-depot camp nestled in one of the most stunning valleys of old-growth Redwoods in the coastal Santa Cruz Mountains. Their steam engines date from 1890 and are among the oldest and most authentically preserved narrow-gauge steam engines providing regularly scheduled passenger service in America." />
+			<Tree content={<a href="https://www.roaringcamp.com/historical-facts" target="_blank" rel="noopener noreferrer">Learn more about the history of Roaring Camp</a>} icon={faLink} />
+		</Tree>
+		<Tree content="What should I wear?">
+			<Tree content="Ladies we recommend wearing shoes without stilettos. The cathedral grove is on a slope with uneven ground. Guests will also have to board / unboard the train, so wear shoes comfortable for some mobility."icon={faUserTie}/>
+			<Tree content="Is this a themed wedding?">
+				<Tree icon={faUserTie} content="Nope! Normal wedding attire is just fine 👔 👗" />
+			</Tree>
 		</Tree>
 	</Container>
 	)

@@ -75,7 +75,7 @@ export default class Form extends React.Component {
 			{
 				'tag': 'input',
 				'type': 'text',
-				'name': 'guest-2-lastname',
+				'name': 'guest-3-lastname',
 				'cf-questions': "What is your plus-two's lastname?",
 				'cf-conditional-guest-number': '3'
 			},
@@ -92,7 +92,7 @@ export default class Form extends React.Component {
 		this.cf = ConversationalForm.startTheConversation({
 			options: {
 				submitCallback: this.submitCallback,
-				preventAutoFocus: false,
+				preventAutoFocus: true,
 				preventAutoStart: true,
 				eventDispatcher: dispatcher,
 				theme: 'dark',

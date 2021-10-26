@@ -7,6 +7,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { rem } from "polished";
 import { StyledButton } from "./css-mixins";
 import hotelInfo from '../hotels';
+import airportInfo from '../airports';
 
 const Button = styled(StyledButton)`
 	padding: 10px;
@@ -55,6 +56,8 @@ function VenueMap({hotel, updateHotelState}) {
 	const moveToMarker = (coordinates, mapRef, markerRef, zoomLvl) => {
 		const [lat, lon] = coordinates;
 		mapRef.flyTo([lat, lon], zoomLvl);
+		console.log('open popup');
+		console.log(markerRef)
 		markerRef.openPopup();
 	}
 
@@ -70,6 +73,7 @@ function VenueMap({hotel, updateHotelState}) {
 		if (hotel.id === undefined || mapRef.current === undefined) return;
 		const { lat, lng } = hotel;
 		const map = mapRef.current;
+		console.log(hotel.ref)
 		moveToMarker([lat, lng], map, hotel.ref, hotel.zoom);
 	}, [hotel, mapRef]);
 
@@ -84,6 +88,7 @@ function VenueMap({hotel, updateHotelState}) {
 						zoom={venue.zoom}
 						scrollWheelZoom={false}
 						whenCreated={ mapInstance => { mapRef.current = mapInstance } }
+						tap={false}
 					>
 						<LayersControl position="topright">
 							<LayersControl.BaseLayer checked name="Open Street Map">
@@ -92,7 +97,7 @@ function VenueMap({hotel, updateHotelState}) {
 								url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 								/>
 							</LayersControl.BaseLayer>
-							<LayersControl.Overlay checked name="Venue 🚂">
+							<LayersControl.Overlay checked name="  Venue 🚂">
 								<Marker 
 									position={[37.040723, -122.062440]}
 									alt="venue"
@@ -103,16 +108,20 @@ function VenueMap({hotel, updateHotelState}) {
 									</Popup>
 								</Marker>
 							</LayersControl.Overlay>
-							<LayersControl.Overlay checked name="Airport ✈️">
-								<Marker position={[37.364714, -121.924238]} alt="airport">
-									<Popup>
-										<b>San Jose International Airport</b>
-										<br />
-										Airport Code: <code>SJC</code>
-									</Popup>
-								</Marker>
+							<LayersControl.Overlay checked name="Airports ✈️">
+								<LayerGroup>
+									{airportInfo.map((airport, index) => (
+										<Marker key={index} position={[airport.lat, airport.lng,]} alt="airport">
+											<Popup>
+												<b>{airport.name}</b>
+												<br />
+												Airport Code: <code>{airport.id.toUpperCase()}</code>
+											</Popup>
+										</Marker>
+									))}
+								</LayerGroup>
 							</LayersControl.Overlay>
-							<LayersControl.Overlay checked name="Hotels 🏨">
+							<LayersControl.Overlay checked name=" Hotels 🏨">
 								<LayerGroup>
 									{hotelInfo.map((hotel, index) => (
 										<Marker 
