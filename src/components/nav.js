@@ -97,16 +97,8 @@ const Nav = ({isMobileNavActive, toggleMobileNav, headerInView}) => {
 					</Li>
 					<Li>
 						<AnchorLink
-							to="/#accommodations"
-							title="Accommodations"
-							className="stripped"
-							onAnchorLinkClick={() => toggleMobileNav()}
-						/>
-					</Li>
-					<Li>
-						<AnchorLink
-							to="/#registry"
-							title="Registry"
+							to="/#lodging"
+							title="Lodging"
 							className="stripped"
 							onAnchorLinkClick={() => toggleMobileNav()}
 						/>
@@ -115,6 +107,14 @@ const Nav = ({isMobileNavActive, toggleMobileNav, headerInView}) => {
 						<AnchorLink
 							to="/#rsvp"
 							title="rsvp"
+							className="stripped"
+							onAnchorLinkClick={() => toggleMobileNav()}
+						/>
+					</Li>
+					<Li>
+						<AnchorLink
+							to="/#registry"
+							title="Registry"
 							className="stripped"
 							onAnchorLinkClick={() => toggleMobileNav()}
 						/>

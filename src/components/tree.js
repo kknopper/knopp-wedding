@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare, faMinusSquare } from '@fortawesome/free-regular-svg-icons'
-import { faCheckSquare, faLink, faUserTie, faLocomotive } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faLink, faUserTie, faLocomotive, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import useMeasure from 'react-use-measure';
 import styled from 'styled-components';
 import { useSpring, animated, config} from '@react-spring/web';
@@ -119,10 +119,13 @@ export default function FaqTree() {
 			<Tree content={<a href="https://www.roaringcamp.com/historical-facts" target="_blank" rel="noopener noreferrer">Learn more about the history of Roaring Camp</a>} icon={faLink} />
 		</Tree>
 		<Tree content="What should I wear?">
-			<Tree content="Ladies we recommend wearing shoes without stilettos. The cathedral grove is on a slope with uneven ground. Guests will also have to board / unboard the train, so wear shoes comfortable for some mobility."icon={faUserTie}/>
+			<Tree content="Ladies we recommend wearing shoes without stilettos. The cathedral grove is on a slope with uneven ground and it will be a standing ceremony. Guests will also have to board / unboard the train, so wear shoes comfortable for some mobility."icon={faUserTie}/>
 			<Tree content="Is this a themed wedding?">
 				<Tree icon={faUserTie} content="Nope! Normal wedding attire is just fine 👔 👗" />
 			</Tree>
+		</Tree>
+		<Tree content="Breakfast?">
+			<Tree content="Yes, Breakfast. On us. Show up when you wake up, (as long as that's before 1pm!) and join us for a casual hangout before you hit the road." icon={faCoffee}/>
 		</Tree>
 	</Container>
 	)

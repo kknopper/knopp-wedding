@@ -25,7 +25,7 @@ const Hotels = styled.ul`
 	`}
 `;
 
-const Accommodations = () => {
+const Lodging = () => {
 	//state for pointing to leaflet marker on the map
 	const [hotelMapData, setHotelData] = React.useState({id: null});
 	
@@ -38,15 +38,15 @@ const Accommodations = () => {
 	};
 
 	return (
-		<StyledSection id="accommodations" headlineIcon={faHotel}>
+		<StyledSection id="lodging" headlineIcon={faHotel}>
 			<VenueMap hotel={hotelMapData} updateHotelState={updateMapState} />
 			<Hotels>
 				{hotelInfo.map((hotel, index) => (
-					<LocationCard place={hotel} data={hotelMapData} cardClick={updateMapState} cardButtonClick={childLinkClick} />
+					<LocationCard key={index} place={hotel} data={hotelMapData} cardClick={updateMapState} cardButtonClick={childLinkClick} />
 				))}
 			</Hotels>
 		</StyledSection>
 	)
 }
 
-export default Accommodations
+export default Lodging

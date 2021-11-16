@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHotel, faStar, faStarHalfAlt, faExternalLinkAlt, faPhone, faGlobe, faMapMarkerAlt, faCarAlt, faDollarSign, faPlane, faPlaneDeparture} from "@fortawesome/free-solid-svg-icons";
-import { rem, lighten } from "polished";
+import { rem, lighten, position } from "polished";
 import { breakpoint } from './css-mixins';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
@@ -108,7 +108,7 @@ const StateIcon = styled(FontAwesomeIcon)`
 	position: absolute;
 	color: #2974C0;
 	top: 15px;
-	right: 15px;
+	right: ${props => props.alignment || '15px'};
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out;
 
@@ -116,6 +116,15 @@ const StateIcon = styled(FontAwesomeIcon)`
 		opacity: 1 !important;
 	}
 `;
+
+const StarIcon = styled(FontAwesomeIcon)`
+	position: absolute;
+	color: #F9B627;
+	top: 15px;
+	right: 15px;
+`;
+
+
 
 const PlaceCode = styled.p`
 	margin-top: 0;
@@ -190,7 +199,12 @@ const LocationCard = ({place, data, cardClick, cardButtonClick}) => {
 						}}
 					></StyledAnchor>
 				) : ''}
-				<StateIcon icon={faMapMarkerAlt} />
+				{place.blockedRooms ? (
+					<React.Fragment>
+						<StarIcon icon={faStar} />
+						<StateIcon icon={faMapMarkerAlt} alignment={'35px'} />
+					</React.Fragment>
+				) : <StateIcon icon={faMapMarkerAlt} />}
 			</div>
 		</Card>
 	)

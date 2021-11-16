@@ -6,7 +6,7 @@ import Schedule from '../components/sections/schedule';
 import Faq from '../components/sections/faq';
 import Registry from '../components/sections/registry';
 import Travel from '../components/sections/traveling';
-import Accommodations from '../components/sections/accommodations';
+import Lodging from '../components/sections/lodging';
 import Rsvp from '../components/sections/rsvp';
 import Photos from '../components/sections/photos';
 // This ensures that the icon CSS is loaded immediately before attempting to render icons
@@ -37,7 +37,7 @@ const IndexPage = () => {
 					<Schedule/>
 					<Faq/>
 					<Travel/>
-					<Accommodations/>
+					<Lodging/>
 					<Rsvp/>
 					<Registry/>
 					<Photos/>

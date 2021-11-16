@@ -32,52 +32,42 @@ export default class Form extends React.Component {
 			{
 				'tag': 'input',
 				'type': 'number',
-				'name': 'guest-number',
-				'cf-questions': 'How many adults (18+) are attending for your party?',
+				'name': 'invite-number',
+				'cf-questions': 'How many tickets did you receive in your invitation?',
+				'min':"1",
+				'max':'4',
+				'cf-error': "Must be between 1 and 4",
+				'required' : true
+			},
+			{
+				'tag': 'input',
+				'type': 'number',
+				'name': 'attending-wedding-number',
+				'cf-questions': 'How many in your party are attending the wedding?',
 				'min':"0",
-				'max':'3',
-				'cf-error': "Must be between 0 and 3",
+				'max':'4',
+				'cf-error': "Must be between 0 and 4",
 				'required' : true
 			},
 			{
 				'tag': 'input',
 				'type': 'text',
-				'name': 'guest-1-firstname',
-				'cf-questions': 'What is your firstname?'
+				'name': 'guest-1-fullname',
+				'cf-questions': 'What is your full name?'
 			},
 			{
 				'tag': 'input',
 				'type': 'text',
-				'name': 'guest-1-lastname',
-				'cf-questions': 'What is your lastname?'
+				'name': 'guest-2-fullname',
+				'cf-questions': "What is your plus-one's full name?",
+				'cf-conditional-attending-wedding-number': '2||3'
 			},
 			{
 				'tag': 'input',
 				'type': 'text',
-				'name': 'guest-2-firstname',
-				'cf-questions': "What is your plus-one's firstname?",
-				'cf-conditional-guest-number': '2||3'
-			},
-			{
-				'tag': 'input',
-				'type': 'text',
-				'name': 'guest-2-lastname',
-				'cf-questions': "What is your plus-one's lastname?",
-				'cf-conditional-guest-number': '2||3'
-			},
-			{
-				'tag': 'input',
-				'type': 'text',
-				'name': 'guest-3-firstname',
-				'cf-questions': "What is your plus-two's firstname?",
-				'cf-conditional-guest-number': '3'
-			},
-			{
-				'tag': 'input',
-				'type': 'text',
-				'name': 'guest-3-lastname',
-				'cf-questions': "What is your plus-two's lastname?",
-				'cf-conditional-guest-number': '3'
+				'name': 'guest-3-fullname',
+				'cf-questions': "What is your plus-two's full name?",
+				'cf-conditional-attending-wedding-number': '3'
 			},
 		];
 		
@@ -145,13 +135,11 @@ export default class Form extends React.Component {
 				<input type="hidden" name="form-name" value="rsvpForm" />
 				{/* <cf-robot-message cf-questions="Welcome! We're excited for you to attend our wedding!" /> */}
 				{/* <cf-robot-message cf-questions="(Please check your invite to see the number of tickets provided)" /> */}
-				<input type="hidden" name="guest-number" cf-questions="How many adults (18+) are attending for your party?" min="0" max="3" cf-error="Must be between 0 and 3" required />
-				<input type="hidden" name="guest-1-firstname" cf-questions="What is your first name?" />
-				<input type="hidden" name="guest-1-lastname" cf-questions="What is your last name?" />
-				<input type="hidden" name="guest-2-firstname" cf-questions="What is your plus one's first name?" cf-conditional-guest-number="2||3" />
-				<input type="hidden" name="guest-2-lastname" cf-questions="What is your plus one's last name?" cf-conditional-guest-number="2||3" />
-				<input type="hidden" name="guest-3-firstname" cf-questions="What is your plus two's first name?" cf-conditional-guest-number="3" />
-				<input type="hidden" name="guest-3-lastname" cf-questions="What is your plus two's last name?" cf-conditional-guest-number="3" />
+				<input type="hidden" name="invite-number" cf-questions="How many tickets did you receive in your invitation?" min="1" max="4" cf-error="Must be between 1 and 4" required />
+				<input type="hidden" name="attending-wedding-number" cf-questions="How many in your party are attending the wedding?" min="0" max="4" cf-error="Must be between 0 and 4" required />
+				<input type="hidden" name="guest-1-fullname" cf-questions="What is your full name?" />
+				<input type="hidden" name="guest-2-fullname" cf-questions="What is your plus one's first name?" cf-conditional-guest-number="2||3" />
+				<input type="hidden" name="guest-3-fullname" cf-questions="What is your plus two's last name?" cf-conditional-guest-number="3" />
 			</StyledForm>
 		);
 	}

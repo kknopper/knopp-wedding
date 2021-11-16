@@ -41,6 +41,14 @@ const DirectionsButton = ({location}) => {
 			},
 			google: 'https://goo.gl/maps/97ztJtGB9Avb4uH39',
 			waze: 'https://ul.waze.com/ul?preview_venue_id=155910514.1559367288.290454&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'
+		},
+		sheraton: {
+			apple: {
+				ios: 'maps://?address=5030%20Scotts%20Valley%20Dr,%20Scotts%20Valley,%20CA%20%2095066,%20United%20States&auid=7232579756596382434&ll=37.054107,-122.012138&lsp=9902&q=Four%20Points%20by%20Sheraton&_ext=CjIKBQgEEOIBCgQIBRADCgQIBhALCgQIChAACgQIUhADCgQIVRANCgQIWRABCgUIpAEQARIkKUs1s4dYhkJAMekOYT4igV7AOckK2eN+h0JAQY3LudJpgF7A',
+				normal: 'https://duckduckgo.com/?q=four+points+by+sheraton+scotts+valley&t=h_&iax=images&ia=images&iaxm=places'
+			},
+			google: 'https://goo.gl/maps/mSMjUg9ouh35KWvR6',
+			waze: 'https://ul.waze.com/ul?place=ChIJ80NE_kpHjoARTUptUH8j6rk&ll=37.05406310%2C-122.01208490&navigate=yes&utm_campaign=waze_website&utm_source=waze_website&utm_medium=lm_share_location'
 		}
 	}
 

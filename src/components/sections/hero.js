@@ -25,7 +25,7 @@ const StyledSection = styled.section`
 	align-items: center;
 
 	.hero-img {
-		height: calc(100vh -  (var(--padding) * 2));
+		height: calc(100vh -  (var(--padding) * 2) - env(safe-area-inset-bottom));
 		grid-area: 1/1;
 		width: 100%;
 	}

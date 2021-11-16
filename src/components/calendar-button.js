@@ -25,7 +25,10 @@ const CalendarButton = ({linkId}) => {
 	return (
 		<ModalButton buttonText='Add To Calendar' faIcon={faCalendarDay}>
 			{/* Edit Links: */}
+			{/* Wedding */}
 			{/* https://calndr.link/events/zCAqaaenwN?secret=e8SeMx1oI04N4Xh06stLMfyeQa7LBglq4Vd6 */}
+			{/* Breakfast */}
+			{/* https://calndr.link/events/x6Dwkqq11Y?secret=xFiUci5HBZ5rWJ1C5C32sUFrtZnzhZuDbh8C */}
 			<ul>
 				<li>
 					<ModalLinks href={`https://calndr.link/e/${linkId}?s=apple`}>

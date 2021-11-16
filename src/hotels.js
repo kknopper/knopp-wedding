@@ -12,7 +12,8 @@ const hotelInfo = [
 		distance: 4.6,
 		price: "$$",
 		stars: 3,
-		zoom: 11
+		zoom: 11,
+		blockedRooms: true
 	},
 	{
 		id: "hilton-scotts-valley",
@@ -87,7 +88,8 @@ const hotelInfo = [
 		distance: 5.4,
 		price: "$",
 		stars: 3,
-		zoom: 11
+		zoom: 11,
+		blockedRooms: true
 	},
 	{
 		key: 6,
@@ -117,7 +119,8 @@ const hotelInfo = [
 		distance: 4.5,
 		price: "$$",
 		stars: 2,
-		zoom: 11
+		zoom: 11,
+		blockedRooms: true
 	},
 ];
 

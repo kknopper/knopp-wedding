@@ -75,6 +75,8 @@ const Travel = () => {
 					<LocationCard key={index} place={airport} />
 				))}
 			</Airports>
+			<h3>Accommodations</h3>
+			<p>We have selected a few hotels were we have reserved a block of rooms. Please check out out the hotels in the section below. </p>
 		</Section>
 	)
 }
