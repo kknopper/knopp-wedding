@@ -10,7 +10,8 @@ const StyledSection = styled.section`
 	--padding: 20px;
 	text-align: center;
 	align-content: center;
-	height: calc(100vh);
+	min-height: calc(100vh - env(safe-area-inset-bottom));
+	min-height: -webkit-fill-available;
 	width: 100%;
 	grid-area: hero;
 	background: var(--theme-bg);
