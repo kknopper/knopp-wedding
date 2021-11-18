@@ -190,7 +190,7 @@ const LocationCard = ({place, data, cardClick, cardButtonClick}) => {
 				</ButtonGrid>
 				{place.type === 'hotel' ? (
 					<StyledAnchor
-						to="/#accommodations"
+						to="/#lodging"
 						className="stripped"
 						stripHash
 						alt="Show on map"
