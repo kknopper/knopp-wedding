@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const StyledScroll = styled(animated.div)`
 	position: absolute;
-	bottom: 15vw;
+	bottom: 10vw;
 	width: 100%;
 	color: white;
 	text-align: center;
