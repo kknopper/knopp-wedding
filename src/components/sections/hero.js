@@ -51,7 +51,6 @@ const StyledHeadline = styled(animated.h1)`
 	${breakpoint.small`
 		font-size: 3em;
 	`}
-	
 `;
 
 const StyledSubheadline = styled(animated.h2)`

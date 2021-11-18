@@ -3,11 +3,12 @@ import { animated, useSpring, config } from 'react-spring';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import styled from 'styled-components'
+import { breakpoint } from './css-mixins';
+import styled from 'styled-components';
 
 const StyledScroll = styled(animated.div)`
 	position: absolute;
-	bottom: 10vw;
+	bottom: 5vw;
 	width: 100%;
 	color: white;
 	text-align: center;
@@ -19,6 +20,14 @@ const StyledScroll = styled(animated.div)`
 	padding-bottom: 5px;
 	text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 	height: 60px;
+
+	${breakpoint.medium`
+		bottom: 10vw;
+	`}
+
+	${breakpoint.small`
+		bottom: 15vw;
+	`}
 `;
 
 const StyledAnchor = styled(AnchorLink)`
