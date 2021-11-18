@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const StyledScroll = styled(animated.div)`
 	position: absolute;
-	bottom: 5vw;
+	bottom: 10vw;
 	width: 100%;
 	color: white;
 	text-align: center;
@@ -22,11 +22,11 @@ const StyledScroll = styled(animated.div)`
 	height: 60px;
 
 	${breakpoint.medium`
-		bottom: 10vw;
+		bottom: 15vw;
 	`}
 
 	${breakpoint.small`
-		bottom: 15vw;
+		bottom: 20vw;
 	`}
 `;
 
