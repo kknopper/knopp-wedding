@@ -4,6 +4,7 @@ import { faPlusSquare, faMinusSquare } from '@fortawesome/free-regular-svg-icons
 import { faCheckSquare, faLink, faUserTie, faLocomotive, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import useMeasure from 'react-use-measure';
 import styled from 'styled-components';
+import { breakpoint } from './css-mixins';
 import { useSpring, animated, config} from '@react-spring/web';
 
 const Container = styled('div')`
@@ -23,6 +24,14 @@ const Container = styled('div')`
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-start;
+
+	${breakpoint.medium`
+		width: 90%;
+	`}
+
+	${breakpoint.small`
+		width: 100%;
+	`}
 `
 
 const Frame = styled('div')`
