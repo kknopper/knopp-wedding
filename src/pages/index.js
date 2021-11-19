@@ -8,7 +8,8 @@ import Registry from '../components/sections/registry';
 import Travel from '../components/sections/traveling';
 import Lodging from '../components/sections/lodging';
 import Rsvp from '../components/sections/rsvp';
-import Photos from '../components/sections/photos';
+// import Photos from '../components/sections/photos';
+
 // This ensures that the icon CSS is loaded immediately before attempting to render icons
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -40,7 +41,7 @@ const IndexPage = () => {
 					<Lodging/>
 					<Rsvp/>
 					<Registry/>
-					<Photos/>
+					{/* <Photos/> */}
 				</div>
 			</Layout>
 		</React.Fragment>

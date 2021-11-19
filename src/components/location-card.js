@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHotel, faStar, faStarHalfAlt, faExternalLinkAlt, faPhone, faGlobe, faMapMarkerAlt, faCarAlt, faDollarSign, faPlane, faPlaneDeparture} from "@fortawesome/free-solid-svg-icons";
-import { rem, lighten, position } from "polished";
+import { rem, lighten } from "polished";
 import { breakpoint } from './css-mixins';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 

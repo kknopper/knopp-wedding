@@ -2,24 +2,63 @@ import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDotCircle} from "@fortawesome/free-regular-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { MapContainer, TileLayer, Marker, Popup, LayersControl, LayerGroup} from "react-leaflet";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { rem } from "polished";
-import { StyledButton } from "./css-mixins";
+import { StyledButton, breakpoint } from "./css-mixins";
 import hotelInfo from '../hotels';
 import airportInfo from '../airports';
+
+const Legend = styled.div`
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+
+	${breakpoint.small`
+		flex-wrap: wrap;
+		justify-content: center;
+	`}
+`;
 
 const Button = styled(StyledButton)`
 	padding: 10px;
 	font-size: ${rem("20px")};
 	text-align: center;
-	margin: 10px auto 20px;
 	display: flex;
 	justify-content: center;
+	margin:  0 0 10px;
 
 	span {
 		padding-left: 10px;
 		padding-right: 10px;
+	}
+`;
+
+const StarIcon = styled(FontAwesomeIcon)`
+	color: ${props => props.color || 'var(--theme-text)'};
+	font-size: 16px;
+`
+
+const LegendInfo = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	border: 2px solid var(--theme-text);
+	border-radius: 5px;
+	padding: 10px;
+	margin: 0 10px 10px;
+	font-size: 1.25rem;
+	font-family: 'Blooming Elegant Sans';
+
+	${breakpoint.small`
+		text-align: center;
+		justify-content: center;
+	`}
+
+	span {
+		padding: 5px;
+		display: block;
 	}
 `;
 
@@ -73,7 +112,7 @@ function VenueMap({hotel, updateHotelState}) {
 		if (hotel.id === undefined || mapRef.current === undefined) return;
 		const { lat, lng } = hotel;
 		const map = mapRef.current;
-		console.log(hotel.ref)
+		// console.log(hotel.ref)
 		moveToMarker([lat, lng], map, hotel.ref, hotel.zoom);
 	}, [hotel, mapRef]);
 
@@ -156,7 +195,13 @@ function VenueMap({hotel, updateHotelState}) {
 							</LayersControl.Overlay>
 						</LayersControl>
 					</Map>
-					<Button onClick={() => recenter(9)}><FontAwesomeIcon icon={faDotCircle}></FontAwesomeIcon><span>Recenter Map</span></Button>
+					<Legend>
+						<Button onClick={() => recenter(9)}><FontAwesomeIcon icon={faDotCircle}></FontAwesomeIcon><span>Recenter Map</span></Button>
+						<LegendInfo>
+							<span><StarIcon icon={faStar}></StarIcon> = Amenities provided</span>
+							<span><StarIcon color="#F9B627" icon={faStar}></StarIcon> = Blocked Rooms Available</span>
+						</LegendInfo>
+					</Legend>
 				</React.Fragment>
 			)}
 		</React.Fragment>
