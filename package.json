@@ -48,6 +48,7 @@
     "react-leaflet": "^3.2.1",
     "react-spring": "^9.2.4",
     "react-use-measure": "^2.0.4",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.1",
+    "use-sound": "^4.0.1"
   }
 }
