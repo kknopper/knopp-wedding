@@ -26,7 +26,7 @@ const Travel = () => {
 				))}
 			</Airports>
 			<h3>Accommodations</h3>
-			<p>We have selected a few hotels were we have reserved a block of rooms. Please check out out the hotels in the Lodging section below.</p>
+			<p>We have reserved a block of rooms at the Four Points by Sheraton, which is the hotel where we will be staying. You can call the hotel and use the code <code>KEV</code> or, click on the booking link in the hotel card below.</p>
 			<p> Please note that we can't guarantee any prices, as the blocked rates are booking directly with the hotel. You may be able to find better deals with 3rd party booking sites, or with AirBnB.</p>
 		</Section>
 	)

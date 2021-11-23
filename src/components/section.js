@@ -34,9 +34,9 @@ const Content = styled.div`
 	text-align: center;
 `
 
-const Section = ({ id, children, headlineText, headlineIcon }) => {
+const Section = ({ id, children, headlineText, headlineIcon, className }) => {
 	return (
-		<SectionStyled id={id} className={`section section-${id}`}>
+		<SectionStyled id={id} className={`section section-${id} ${className}`}>
 			<SectionContent>
 				<SectionHeadline faIcon={headlineIcon || null}>
 					{ headlineText || id }

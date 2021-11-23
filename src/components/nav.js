@@ -119,6 +119,14 @@ const Nav = ({isMobileNavActive, toggleMobileNav, headerInView}) => {
 							onAnchorLinkClick={() => toggleMobileNav()}
 						/>
 					</Li>
+					<Li>
+						<AnchorLink
+							to="/#photos"
+							title="Photos"
+							className="stripped"
+							onAnchorLinkClick={() => toggleMobileNav()}
+						/>
+					</Li>
 				</ul>
 			</StyledNav>
 			<Hamburger icon={faBars} onClick={() => toggleMobileNav()} />

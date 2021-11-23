@@ -128,7 +128,7 @@ export default function FaqTree() {
 			<Tree content={<a href="https://www.roaringcamp.com/historical-facts" target="_blank" rel="noopener noreferrer">Learn more about the history of Roaring Camp</a>} icon={faLink} />
 		</Tree>
 		<Tree content="What should I wear?">
-			<Tree content="Ladies we recommend wearing shoes without stilettos. The cathedral grove is on a slope with uneven ground and it will be a standing ceremony. Guests will also have to board / unboard the train, so wear shoes comfortable for some mobility."icon={faUserTie}/>
+			<Tree content="Ladies we would recommend not wearing heels. The cathedral grove is on a slope with uneven ground and it will be a standing ceremony. Guests will also have to board & unboard the train, so wear shoes comfortable for some mobility."icon={faUserTie}/>
 			<Tree content="Is this a themed wedding?">
 				<Tree icon={faUserTie} content="Nope! Normal wedding attire is just fine 👔 👗" />
 			</Tree>

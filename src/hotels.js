@@ -13,7 +13,8 @@ const hotelInfo = [
 		price: "$$",
 		stars: 3,
 		zoom: 11,
-		blockedRooms: true
+		blockedRooms: true,
+		blockedRoomResLink: "https://www.marriott.com/events/start.mi?id=1635956089763&key=GRP"
 	},
 	{
 		id: "hilton-scotts-valley",
@@ -89,7 +90,6 @@ const hotelInfo = [
 		price: "$",
 		stars: 3,
 		zoom: 11,
-		blockedRooms: true
 	},
 	{
 		key: 6,
@@ -111,16 +111,15 @@ const hotelInfo = [
 		id: "quality-inn",
 		type: 'hotel',
 		name: "Quality Inn",
-		website: "https://holiday-inn-express-suites-santa-cruz.business.site/",
-		address: "9733 Hwy 9, Ben Lomond, CA 95005",
-		phone: "831-709-4025",
-		lat: 37.0937219959714,
-		lng: -122.0938818736327,
+		website: "https://www.qualityinnsantacruz.com/",
+		address: "1101 Ocean St, Santa Cruz, CA 95060",
+		phone: "831-427-1616",
+		lat: 36.98192948940997,
+		lng: -122.02319722427896,
 		distance: 4.5,
 		price: "$$",
 		stars: 2,
 		zoom: 11,
-		blockedRooms: true
 	},
 ];
 

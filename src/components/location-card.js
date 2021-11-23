@@ -99,6 +99,23 @@ const StyledLink = styled.a`
 	}
 `;
 
+const StyledInlineLink = styled.a`
+	z-index: 1;
+	position: relative;
+	font-family: 'Blooming Elegant Sans';
+	text-decoration: underline;
+	cursor: pointer;
+	color: var(--theme-text);
+	font-size: ${rem("18px")};
+	padding-left: 5px;
+	padding-bottom: 5px;
+
+	${breakpoint.xsmall`
+		font-size: ${rem("16px")};
+		bottom: 1px;
+	`}
+`;
+
 const ExtLinkIcon = styled(FontAwesomeIcon)`
 	font-size: ${rem("12px")};
 	padding-left: 5px;
@@ -124,8 +141,6 @@ const StarIcon = styled(FontAwesomeIcon)`
 	right: 15px;
 `;
 
-
-
 const PlaceCode = styled.p`
 	margin-top: 0;
 
@@ -133,7 +148,6 @@ const PlaceCode = styled.p`
 		margin-left: 5px;
 	}
 `;
-
 
 const StyledAnchor = styled(AnchorLink)`
 	position: absolute;
@@ -145,7 +159,7 @@ const StyledAnchor = styled(AnchorLink)`
 	&:hover ~ ${StateIcon} {
 		opacity: 0.75;
 	}
-`
+`;
 
 const LocationCard = ({place, data, cardClick, cardButtonClick}) => {
 	return (
@@ -160,6 +174,7 @@ const LocationCard = ({place, data, cardClick, cardButtonClick}) => {
 							{(place.stars  % 1 !== 0) ? <FontAwesomeIcon icon={faStarHalfAlt} /> : ''}
 							<span> &bull; </span>
 							{[...Array(place.price.length)].map((price, i) => <FontAwesomeIcon key={i} icon={faDollarSign} />)}
+							{place.blockedRooms  && place.blockedRoomResLink ? <StyledInlineLink href={place.blockedRoomResLink} target="_blank">Blocked Rooms Reservation</StyledInlineLink>: ''}
 						</Info>
 					) : ''}
 				</IconText>
