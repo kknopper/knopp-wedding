@@ -184,7 +184,7 @@ export default class Form extends React.Component {
 				<input type="hidden" name="guest-3-fullname" cf-questions="What is your plus two's last name?" cf-conditional-guest-number="3||4||5" />
 				<input type="hidden" name="guest-4-fullname" cf-questions="What is your plus two's last name?" cf-conditional-guest-number="4||5" />
 				<input type="hidden" name="guest-5-fullname" cf-questions="What is your plus two's last name?" cf-conditional-guest-number="5" />
-				<input type="hidden" id="attending-breakfast-number" name="attending-breakfast-number" cf-questions="How many in your party are attending breakfast the following day?" min="0" max="5" cf-error="Must be between 0 and 5" required />
+				<input type="hidden" id="attending-breakfast-number" name="attending-breakfast-number" cf-questions="How many in your party are attending breakfast the following day?" min="0" max="5" cf-error="Must be between 0 and 5" cf-conditional-attending-wedding-number="^[1-9][0-9]*$" required />
 			</StyledForm>
 		);
 	}
