@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare, faMinusSquare } from '@fortawesome/free-regular-svg-icons'
-import { faCheckSquare, faLink, faUserTie, faLocomotive, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faLink, faUserTie, faLocomotive, faCoffee, faAward, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import useMeasure from 'react-use-measure';
 import styled from 'styled-components';
 import { breakpoint } from './css-mixins';
@@ -119,6 +119,9 @@ export default function FaqTree() {
 	<Container>
 		<Tree content="What's with the train?">
 			<Tree content="Roaring Camp is a vintage train-depot. Your invitation includes complementary tickets to ride the steam train. All guests will need to board the train which will take you on a 15 minute ride to the cathedral grove, where our ceremony will take place, after which we'll ride back to Roaring Camp, where our reception will be held. All Aboard!" />
+			<Tree content="When does the train leave?">
+				<Tree content="The train leaves at 2:45pm sharp. If you miss the train you will miss the ceremony. DO NOT BE LATE!" icon={faLocomotive} />
+			</Tree>
 			<Tree content="I don't like trains" icon={faLocomotive}>
 				<Tree content="If for whatever reason you don't want to ride the train, let us know in the RSVP form, so we can make special accommodations" icon={faLocomotive} />
 			</Tree>
@@ -135,6 +138,15 @@ export default function FaqTree() {
 		</Tree>
 		<Tree content="Breakfast?">
 			<Tree content="Yes, Breakfast. On us. Show up when you wake up, (as long as that's before 1pm!) and join us for a casual hangout before you hit the road." icon={faCoffee}/>
+		</Tree>
+		<Tree content="I lost my train tickets, what do I do?">
+			<Tree content="No worries, the tickets are just a formality to let you know how many invites you've received. You will still be able to ride the train!" icon={faLocomotive}/>
+			<Tree content="Wait, there's tickets?">
+				<Tree icon={faEnvelope} content="Yes, please check your envelope" />
+				<Tree content="I threw away my envelope...">
+				<Tree icon={faAward} content="Awkwaaard. Give Kevin a text at 818-641-8871 if you're unsure on your invite number" />
+			</Tree>
+			</Tree>
 		</Tree>
 	</Container>
 	)

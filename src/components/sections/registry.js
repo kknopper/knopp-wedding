@@ -4,6 +4,9 @@ import { faGift } from "@fortawesome/free-solid-svg-icons";
 import Section from '../section';
 import { iframeBreakpoint } from '../css-mixins';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { rem } from "polished";
 
 const Content = styled.div`
 	--max-items: 12;
@@ -44,6 +47,22 @@ const Filler = styled.div`
 	`}
 `;
 
+const ExtLinkIcon = styled(FontAwesomeIcon)`
+	font-size:  ${rem("17px")};
+	padding-left: 5px;
+`
+
+const StyledLink = styled.a`
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: baseline;
+	padding: 10px;
+	color: var(--theme-text);
+	text-decoration: underline;
+	font-size: ${rem("24px")};
+`
+
 const Registry = () => {
 	const { width } = useWindowDimensions();
 	const [isLoaded, rehydrate] = React.useState(false);
@@ -66,6 +85,7 @@ const Registry = () => {
 				/>
 				<Filler key={isLoaded} style={{'--width': (width < 1000) ? `calc(${width}px - (${width}px * 0.1))` : '1000px'}}/>
 			</Content>
+			<StyledLink href="www.zola.com/registry/aknoppwedding" target="_blank">View Full Registry <ExtLinkIcon icon={faExternalLinkAlt} /></StyledLink>
 		</Section>
 	)
 }

@@ -15,6 +15,7 @@ const StyledFooter = styled.footer`
 
 const StyledLink = styled.a`
 	text-decoration: underline;
+	color: var(--theme-bg);
 `;
 
 const Anchor = styled(AnchorLink)`
