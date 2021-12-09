@@ -85,7 +85,7 @@ const Registry = () => {
 				/>
 				<Filler key={isLoaded} style={{'--width': (width < 1000) ? `calc(${width}px - (${width}px * 0.1))` : '1000px'}}/>
 			</Content>
-			<StyledLink href="https://www.zola.com/registry/aknoppwedding" target="_blank">View Full Registry <ExtLinkIcon icon={faExternalLinkAlt} /></StyledLink>
+			<StyledLink href="https://www.zola.com/registry/aknoppwedding" target="_blank" rel="noopener noreferrer">View Full Registry <ExtLinkIcon icon={faExternalLinkAlt} /></StyledLink>
 		</Section>
 	)
 }

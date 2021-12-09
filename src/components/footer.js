@@ -31,7 +31,7 @@ const Footer = () => {
 	return (
 		<StyledFooter >
 			<p>Made with ❤️ by Kevin Knopp</p>
-			<p>Engagement photos by <StyledLink href="https://www.monicadawn.com/" target="_blank">Monica Dawn</StyledLink></p>
+			<p>Engagement photos by <StyledLink href="https://www.monicadawn.com/" target="_blank" rel="noopener noreferrer">Monica Dawn</StyledLink></p>
 			<p>©️ Kevin & Nadia {new Date().getFullYear()}</p>
 		</StyledFooter>
 	)

@@ -174,7 +174,7 @@ const LocationCard = ({place, data, cardClick, cardButtonClick}) => {
 							{(place.stars  % 1 !== 0) ? <FontAwesomeIcon icon={faStarHalfAlt} /> : ''}
 							<span> &bull; </span>
 							{[...Array(place.price.length)].map((price, i) => <FontAwesomeIcon key={i} icon={faDollarSign} />)}
-							{place.blockedRooms  && place.blockedRoomResLink ? <StyledInlineLink href={place.blockedRoomResLink} target="_blank">Blocked Rooms Reservation</StyledInlineLink>: ''}
+							{place.blockedRooms  && place.blockedRoomResLink ? <StyledInlineLink href={place.blockedRoomResLink} target="_blank" rel="noopener noreferrer">Blocked Rooms Reservation</StyledInlineLink>: ''}
 						</Info>
 					) : ''}
 				</IconText>
