@@ -144,7 +144,7 @@ export default function FaqTree() {
 			<Tree content="Wait, there's tickets?">
 				<Tree icon={faEnvelope} content="Yes, please check your envelope" />
 				<Tree content="I threw away my envelope...">
-				<Tree icon={faAward} content="Awkwaaard. Give Kevin a text at 818-641-8871 if you're unsure on your invite number" />
+				<Tree icon={faAward} content="Awkwaaard. Give Kevin a text if you're unsure on your invite number" />
 			</Tree>
 			</Tree>
 		</Tree>
